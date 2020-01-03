@@ -1,14 +1,10 @@
-  
+
 <div class ="loginpart" align ="center">
   <form class="form-signin" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <h1 class="h3 mb-3 font-weight-normal">Please Register</h1>
+    <h1 class="h3 mb-3 font-weight-normal">Sign-up</h1>
     <div class="form-group">
       <label for="inputUsername" class="sr-only"></label>
       <input type="text" id="inputUsername" [formControlName]="'username'" class="form-control" placeholder="Username" required="" autofocus="">
-    </div>
-    <div class="form-group">
-      <label for="inputEmail" class="sr-only"></label>
-      <input type="text" id="inputEmail" [formControlName]="'email'"class="form-control" placeholder="Email" required="" autofocus="">
     </div>
     <div class="form-group">
       <label for="inputPassword" class="sr-only"></label>
@@ -18,6 +14,30 @@
       <label for="inputConfirmPassword" class="sr-only"></label>
       <input type="password" id="inputConfirmPassword" [formControlName]="'confirmPassword'" class="form-control" placeholder="Confirm Password" required="">
     </div>
+    <div class="form-group">
+      <label for="inputEmail" class="sr-only"></label>
+      <input type="text" id="inputEmail" [formControlName]="'email'"class="form-control" placeholder="Email" required="" autofocus="">
+    </div>
+    <div class="form-group">
+      <label for="inputFirstName" class="sr-only"></label>
+      <input type="text" id="inputFirstName" [formControlName]="'firstName'"class="form-control" placeholder="First Name" required="" autofocus="">
+    </div>
+    <div class="form-group">
+      <label for="inputLastName" class="sr-only"></label>
+      <input type="text" id="inputLastName" [formControlName]="'lastName'"class="form-control" placeholder="Last Name" required="" autofocus="">
+    </div>
+    <div class="form-group">
+      <label class="inputAboutMe"></label>
+      <p>About Me</p>
+      <editor [formControlName]="'aboutMe'" [init]="{
+            plugins: 'link',
+            force_br_newlines : true,
+            force_p_newlines : false,
+            forced_root_block:''
+            }">
+      </editor>
+    </div>
+
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
   </form>
 </div>

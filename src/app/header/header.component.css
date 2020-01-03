@@ -3,23 +3,23 @@
 .header{
     font-family: Tahoma, sans-serif ;
     padding:5px 20px;
-    background: #5bc6f7;
+    background: gray;
 }
 
 .title{
-    color: aliceblue;
+    color: navy;
     text-decoration: none;
 }
 
 .login, .register{
     float: right;
     text-decoration: none;
-    color: aliceblue;
+    color: navy;
     padding-top: 10px;
 }
 
-.logout,.new-post,.new-image{
+.logout, .new-campaign{
     float: right;
-    color: aliceblue;
+    color: navy;
     padding-top: 17px;
 }

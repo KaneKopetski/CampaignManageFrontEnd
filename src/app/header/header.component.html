@@ -2,14 +2,12 @@
     <div class = "container">
         <div class = "row">
             <div class = "col-md-6">
-                <a href=""><img src="https://fontmeme.com/permalink/191223/de62504de6db38dfc1977a2cfe5408a3.png" alt="twitter-font "class = "title" border="0"></a>
+                <a href=""><img src="https://fontmeme.com/permalink/200103/f326c908c3cea7710602c5171e4b7618.png" alt="twitter-font "class = "title" border="0"></a>
                 <h3><a href="" class = "title"></a></h3>
             </div> <!-- Title-->
 
             <div class= "col-md-3" *ngIf="authService.isAuthenticated()">
-                <a routerLink="add-post" class = "new-post" >Add Post</a>
-                <a routerLink="uploadimage" class = "new-image" >Upload Image</a>
-
+                <a routerLink="select-edition" class = "select-edition">Create Campaign</a>
               <button class="logout btn btn-default" (click) = "logout()">Logout</button>
             </div>
 

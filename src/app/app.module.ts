@@ -19,6 +19,9 @@ import { AuthGuard } from './auth.guard';
 import { UploadImageComponent } from './upload-image/upload-image.component';
 import { CommentComponent } from './comment/comment.component';
 import { AddCommentComponent } from './add-comment/add-comment.component';
+import { CreateCampaignComponent } from './create-campaign/create-campaign.component';
+import { ImageUploadComponent } from './image-upload/image-upload.component';
+import { NewCampaignEditionSelectionComponent } from './new-campaign-edition-selection/new-campaign-edition-selection.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { AddCommentComponent } from './add-comment/add-comment.component';
     PostComponent,
     UploadImageComponent,
     CommentComponent,
-    AddCommentComponent
+    AddCommentComponent,
+    CreateCampaignComponent,
+    ImageUploadComponent,
+    NewCampaignEditionSelectionComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +58,10 @@ import { AddCommentComponent } from './add-comment/add-comment.component';
       {path: 'post/:postId', component: PostComponent},
       {path: 'uploadimage', component: UploadImageComponent},
       {path: 'comment', component: CommentComponent},
-      {path: 'post/:postId/add-comment', component: AddCommentComponent}
+      {path: 'post/:postId/add-comment', component: AddCommentComponent},
+      {path: 'select-edition/create-campaign', component: CreateCampaignComponent},
+      {path: 'select-edition', component: NewCampaignEditionSelectionComponent}
+
     ])
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true}],

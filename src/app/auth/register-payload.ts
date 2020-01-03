@@ -1,6 +1,9 @@
-export class RegisterPayload{
-    username: String;
-    email: String;
-    password: String;
-    confirmPassword: String;
+export class RegisterPayload {
+  username: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  firstName: string;
+  lastName: string;
+  aboutMe: string;
 }
