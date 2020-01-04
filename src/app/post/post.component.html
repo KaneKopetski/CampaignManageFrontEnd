@@ -1,0 +1,36 @@
+
+<div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+          <h1 class="blog-title"><b>{{post.title}}</b></h1>
+          <span>
+                    <p>Author: {{post.username}}</p>
+                </span>
+                
+          <hr>
+          <div class = "contentbox">
+          <p [innerHTML]="post.content"> </p>
+          </div>
+          <hr>
+          <h3>Comments:</h3>
+          <div class="row" *ngFor="let comment of comments | async">
+            <div class="blogcomments">
+             <b>{{comment.username}} </b>says :<br> {{comment.content}}<br><br>
+            </div>
+          </div>
+          <div><a routerLink="add-comment" class="myButton">Add Comment</a></div>
+        </div>
+      </div>
+  
+    </div>
+    
+  <!-- <div class="commentcontainer">
+    <div class="row" *ngFor="let comment of comments | async">
+      <div class="blogcomments">
+        <p></p> {{"comment.content"}}></p></p>>
+      </div>
+    </div>
+  </div> -->
+</div>

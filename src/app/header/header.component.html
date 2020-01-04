@@ -1,0 +1,22 @@
+<div class="header">
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-md-6">
+                <a href=""><img src="https://fontmeme.com/permalink/200103/f326c908c3cea7710602c5171e4b7618.png" alt="twitter-font "class = "title" border="0"></a>
+                <h3><a href="" class = "title"></a></h3>
+            </div> <!-- Title-->
+
+            <div class= "col-md-3" *ngIf="authService.isAuthenticated()">
+                <a routerLink="select-edition" class = "select-edition">Create Campaign</a>
+              <button class="logout btn btn-default" (click) = "logout()">Logout</button>
+            </div>
+
+
+            <div class = "col-md-3" *ngIf="!authService.isAuthenticated()">
+                <a routerLink="login" class= "login btn btn-default">Login</a>
+                <a routerLink="register" class= "register btn btn-default">Register</a>
+
+            </div> <!-- Login and Reg-->
+    </div>
+</div>
+</div>

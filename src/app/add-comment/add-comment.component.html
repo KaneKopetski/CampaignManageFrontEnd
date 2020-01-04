@@ -1,0 +1,24 @@
+
+
+<div class="add-comment-content">
+    <div class="container">
+      <div>
+        <h3 class="new-comment-title">Create New Comment</h3>
+      </div>
+      <hr>
+      <form [formGroup]="addCommentForm" (ngSubmit)="addComment()">
+        <div class="form-group">
+          <label class="comment-content"></label>
+          <editor [formControlName]="'body'" [init]="{
+            plugins: 'link',
+            force_br_newlines : true,
+            force_p_newlines : false,
+            forced_root_block:''
+          }"></editor>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Stabb it</button>
+        </div>
+      </form >
+    </div>
+  </div>

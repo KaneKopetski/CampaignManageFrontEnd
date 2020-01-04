@@ -1,0 +1,25 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.header{
+    font-family: Tahoma, sans-serif ;
+    padding:5px 20px;
+    background: gray;
+}
+
+.title{
+    color: navy;
+    text-decoration: none;
+}
+
+.login, .register{
+    float: right;
+    text-decoration: none;
+    color: navy;
+    padding-top: 10px;
+}
+
+.logout, .new-campaign{
+    float: right;
+    color: navy;
+    padding-top: 17px;
+}

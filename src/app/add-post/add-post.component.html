@@ -1,0 +1,28 @@
+
+
+<div class="add-post-content">
+    <div class="container">
+      <div>
+        <h3 class="new-post-title">Create New Post</h3>
+      </div>
+      <hr>
+      <form [formGroup]="addPostForm" (ngSubmit)="addPost()">
+        <div class="form-group">
+          <label class="post-title">Title</label>
+          <input type="text" [formControlName]="'title'" class="form-control" placeholder="Title">
+        </div>
+        <div class="form-group">
+          <label class="post-content"></label>
+          <editor [formControlName]="'body'" [init]="{
+            plugins: 'link',
+            force_br_newlines : true,
+            force_p_newlines : false,
+            forced_root_block:''
+          }"></editor>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Stabb it</button>
+        </div>
+      </form >
+    </div>
+  </div>
