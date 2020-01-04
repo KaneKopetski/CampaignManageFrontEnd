@@ -12,12 +12,12 @@ import {LocalStorageService} from 'ngx-webstorage';
 })
 export class AuthService {
 
-  private url = 'https://zcw-group3blogproject.cfapps.io/';
+  private url = 'http://localhost:8080/';
 
   constructor(private httpClient : HttpClient, private localStorageService: LocalStorageService) { }
 
   register(registerPayload: RegisterPayload) : Observable<any> {
-    return this.httpClient.post(this.url + 'api/auth/signup', registerPayload);
+    return this.httpClient.post(this.url + 'api/auth/register', registerPayload);
   }
 
   login(loginPayload: LoginPayload): Observable<boolean> {

@@ -22,8 +22,12 @@
           </editor>
         </div>
         <div class="form-group">
-          <label class="inputCampaignEdition">Edition</label>
-          <input type="number" [formControlName]="'campaignEdition'" class="form-control" placeholder="Edition">
+          <select formControlName="campaignEdition" class="custom-select">
+            <option value="" disabled>Which Edition?</option>
+            <option>3.5</option>
+            <option>4.0</option>
+            <option>5E</option>
+          </select>
         </div>
         <div class="image-upload">
           <div class="container">

@@ -5,14 +5,41 @@
 }
 
 .row {
-  margin: 100px;
+  margin-left: 100px;
+  margin-top: 15px;
+}
+
+.thumbnail {
+  border: 5px solid #c54003;
 }
 
 .thumbnail:hover {
-  position:relative;
-  top:-25px;
-  left:-35px;
-  width:300px;
-  display:block;
-  z-index:999;
+  border: none;
+  background: #3a7999;
+  color: #f2f2f2;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  position: relative;
+  box-sizing: border-box;
+  transition: all 500ms ease;
+  animation: bounce 1s;
+
+}
+
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
 }
