@@ -22,6 +22,12 @@ import { AddCommentComponent } from './add-comment/add-comment.component';
 import { CreateCampaignComponent } from './create-campaign/create-campaign.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { NewCampaignEditionSelectionComponent } from './new-campaign-edition-selection/new-campaign-edition-selection.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule,
+  MatIconModule,
+  MatCardModule,
+  MatButtonModule,
+  MatProgressBarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -48,6 +54,11 @@ import { NewCampaignEditionSelectionComponent } from './new-campaign-edition-sel
     NgxWebstorageModule.forRoot(),
     HttpClientModule,
     EditorModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatProgressBarModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'register', component: RegisterComponent},
@@ -62,7 +73,8 @@ import { NewCampaignEditionSelectionComponent } from './new-campaign-edition-sel
       {path: 'select-edition/create-campaign', component: CreateCampaignComponent},
       {path: 'select-edition', component: NewCampaignEditionSelectionComponent}
 
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true}],
   bootstrap: [AppComponent]

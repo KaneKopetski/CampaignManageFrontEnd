@@ -20,16 +20,30 @@
     padding-right: 50px;
   }
 
- .btn{
-  background:    #29fff2;
-  background:    linear-gradient(#29fff2, #2f44e5);
-  border:        2px solid #4947a2;
-  border-radius: 1000px;
-  box-shadow:    0 9px #cfe2f3;
-  padding:       8px 51px;
-  color:         #ffffff;
-  display:       inline-block;
-  font:          italic bold 25px/1 "Ubuntu", sans-serif;
-  text-align:    center;
-
+ .btn {
+   display:inline-block;
+   padding:0.3em 1.2em;
+   margin:0 0.3em 0.3em 0;
+   border-radius:2em;
+   box-sizing: border-box;
+   text-decoration:none;
+   font-family:'Roboto',sans-serif;
+   font-weight:300;
+   color:#FFFFFF;
+   background-color:#4eb5f1;
+   text-align:center;
+   transition: all 0.2s;
  }
+btn:hover{
+   background-color:#4095c6;
+}
+@media all and (max-width:30em) {
+   btn {
+    display: block;
+    margin: 0.2em auto;
+  }
+}
+
+.image-upload {
+  margin: auto;
+}

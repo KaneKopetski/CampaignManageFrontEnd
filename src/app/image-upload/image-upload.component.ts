@@ -48,12 +48,11 @@ export class ImageUploadComponent implements OnInit {
         if (events.type === HttpEventType.UploadProgress) {
           this.fileUploadProgress = Math.round(events.loaded / events.total * 100) + '%';
           console.log(this.fileUploadProgress);
-        } else if(events.type === HttpEventType.Response) {
+        } else if (events.type === HttpEventType.Response) {
           this.fileUploadProgress = '';
           console.log(events.body);
           alert('SUCCESS !!');
         }
-
       });
   }
 }

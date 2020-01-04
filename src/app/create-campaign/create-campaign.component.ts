@@ -3,6 +3,7 @@ import {FormControl, FormGroup, FormBuilder} from '@angular/forms';
 import {CampaignPayload} from './campaign-payload';
 import {CreateCampaignService} from '../create-campaign.service';
 import {Router} from '@angular/router';
+import {ImageUploadComponent} from '../image-upload/image-upload.component';
 
 @Component({
   selector: 'app-create-campaign',
@@ -13,6 +14,7 @@ export class CreateCampaignComponent implements OnInit {
 
   createCampaignForm: FormGroup;
   campaignPayload: CampaignPayload;
+  imageUploadComponent: ImageUploadComponent;
 
   constructor(private createCampaignService: CreateCampaignService, private router: Router, private formBuilder: FormBuilder) {
     this.createCampaignForm = this.formBuilder.group({
@@ -32,6 +34,7 @@ export class CreateCampaignComponent implements OnInit {
   }
 
   createCampaign() {
+    // this.imageUploadComponent.onSubmit();
     this.campaignPayload.description = this.createCampaignForm.get('campaignDescription').value;
     this.campaignPayload.campaignName = this.createCampaignForm.get('campaignName').value;
     this.campaignPayload.edition = this.createCampaignForm.get('campaignEdition').value;

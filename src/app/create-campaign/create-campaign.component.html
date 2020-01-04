@@ -1,5 +1,3 @@
-
-
 <div class="create-campaign">
     <div class="container">
       <div>
@@ -7,6 +5,13 @@
       </div>
       <hr>
       <form [formGroup]="createCampaignForm" (ngSubmit)="createCampaign()">
+        <div class="image-upload">
+          <div class="container">
+            <div>
+              <app-image-upload></app-image-upload>
+            </div>
+          </div>
+        </div>
         <div class="form-group">
           <label class="inputCampaignName">Campaign Name</label>
           <input type="text" [formControlName]="'campaignName'" class="form-control" placeholder="Campaign Name">
@@ -29,19 +34,7 @@
             <option>5E</option>
           </select>
         </div>
-        <div class="image-upload">
-          <div class="container">
 
-            <div class="navbar navbar-default">
-              <div class="navbar-header">
-              </div>
-            </div>
-            <div>
-              <app-image-upload></app-image-upload>
-            </div>
-            <br><br>
-          </div>
-        </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Create</button>
         </div>
