@@ -28,6 +28,9 @@ import { MatToolbarModule,
   MatCardModule,
   MatButtonModule,
   MatProgressBarModule } from '@angular/material';
+import { FormTestComponent } from './form-test/form-test.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { ProgressComponent } from './progress/progress.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { MatToolbarModule,
     AddCommentComponent,
     CreateCampaignComponent,
     ImageUploadComponent,
-    NewCampaignEditionSelectionComponent
+    NewCampaignEditionSelectionComponent,
+    FormTestComponent,
+    FileUploadComponent,
+    ProgressComponent
   ],
   imports: [
     BrowserModule,
@@ -71,8 +77,8 @@ import { MatToolbarModule,
       {path: 'comment', component: CommentComponent},
       {path: 'post/:postId/add-comment', component: AddCommentComponent},
       {path: 'select-edition/create-campaign', component: CreateCampaignComponent},
-      {path: 'select-edition', component: NewCampaignEditionSelectionComponent}
-
+      {path: 'select-edition', component: NewCampaignEditionSelectionComponent},
+      {path: 'form-test', component: FormTestComponent}
     ]),
     BrowserAnimationsModule
   ],

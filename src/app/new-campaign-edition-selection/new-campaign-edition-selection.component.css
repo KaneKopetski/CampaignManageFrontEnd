@@ -4,13 +4,14 @@
   }
 }
 
-.row {
-  margin-left: 100px;
-  margin-top: 15px;
+.container {
+  text-align: center;
 }
 
-.thumbnail {
-  border: 5px solid #c54003;
+.row {
+  margin: auto;
+  /*border: 5px solid darkred;*/
+  float: left;
 }
 
 .thumbnail:hover {
@@ -24,7 +25,6 @@
   box-sizing: border-box;
   transition: all 500ms ease;
   animation: bounce 1s;
-
 }
 
 @keyframes bounce {
