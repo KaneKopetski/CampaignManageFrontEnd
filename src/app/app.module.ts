@@ -31,6 +31,7 @@ import { MatToolbarModule,
 import { FormTestComponent } from './form-test/form-test.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ProgressComponent } from './progress/progress.component';
+import { DisplayProfileComponent } from './display-profile/display-profile.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ProgressComponent } from './progress/progress.component';
     NewCampaignEditionSelectionComponent,
     FormTestComponent,
     FileUploadComponent,
-    ProgressComponent
+    ProgressComponent,
+    DisplayProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +80,8 @@ import { ProgressComponent } from './progress/progress.component';
       {path: 'post/:postId/add-comment', component: AddCommentComponent},
       {path: 'select-edition/create-campaign', component: CreateCampaignComponent},
       {path: 'select-edition', component: NewCampaignEditionSelectionComponent},
-      {path: 'form-test', component: FormTestComponent}
+      {path: 'form-test', component: FormTestComponent},
+      {path: 'profile-test', component: DisplayProfileComponent}
     ]),
     BrowserAnimationsModule
   ],

@@ -37,4 +37,3 @@ export class PostComponent implements OnInit {
   }
 
 }
-1

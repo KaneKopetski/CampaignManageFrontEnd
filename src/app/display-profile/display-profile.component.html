@@ -1,0 +1,19 @@
+
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="profile-picture">
+          <img [src]="'data:image/png;base64,'+this.image"  alt="profile-pic" height="150px" width="150px"/>
+        </div>
+        <h1 class="profile-username">
+          {{this.profile.username}}
+        </h1>
+        <p>
+         {{this.profile.firstName}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -14,9 +14,9 @@ export class AuthService {
 
   private url = 'http://localhost:8080/';
 
-  constructor(private httpClient : HttpClient, private localStorageService: LocalStorageService) { }
+  constructor(private httpClient: HttpClient, private localStorageService: LocalStorageService) { }
 
-  register(registerPayload: RegisterPayload) : Observable<any> {
+  register(registerPayload: RegisterPayload): Observable<any> {
     return this.httpClient.post(this.url + 'api/auth/register', registerPayload);
   }
 
