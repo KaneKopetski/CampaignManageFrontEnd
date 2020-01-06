@@ -1,58 +1,88 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import {RegisterPayload} from '../register-payload';
-import {AuthService} from 'src/app/auth.service';
-import {Router} from '@angular/router';
+import { HttpClient, HttpEvent, HttpEventType, HttpResponse } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { pipe } from 'rxjs';
+import { filter, map, tap } from 'rxjs/operators';
+import { requiredFileType } from './upload-file-validators';
+
+export function uploadProgress<T>( cb: ( progress: number ) => void ) {
+  return tap(( event: HttpEvent<T> ) => {
+    if ( event.type === HttpEventType.UploadProgress ) {
+      cb(Math.round((100 * event.loaded) / event.total));
+    }
+  });
+}
+
+export function toResponseBody<T>() {
+  return pipe(
+    filter(( event: HttpEvent<T> ) => event.type === HttpEventType.Response),
+    map(( res: HttpResponse<T> ) => res.body)
+  );
+}
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
+  progress = 0;
 
-  registerForm: FormGroup;
-  registerPayload: RegisterPayload;
+  signup = new FormGroup({
+    email: new FormControl(null, Validators.required),
+    image: new FormControl(null, [Validators.required, requiredFileType('png')]),
+    username: new FormControl(null, Validators.required),
+    firstName: new FormControl(null, Validators.required),
+    lastName: new FormControl(null, Validators.required),
+    password: new FormControl(null, Validators.required),
+    aboutMe: new FormControl(null, Validators.required)
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router ) {
-    this.registerForm = this.formBuilder.group({
-      username: '',
-      email: '',
-      password: '',
-      confirmPassword: '',
-      firstName: '',
-      lastName: '',
-      aboutMe: ''
+  });
+  success = false;
 
-    });
-    this.registerPayload = {
-      username: '',
-      email: '',
-      password: '',
-      confirmPassword: '',
-      firstName: '',
-      lastName: '',
-      aboutMe: ''
-    };
+  constructor( private http: HttpClient ) {
   }
 
-  ngOnInit() {
-  }
 
-  onSubmit() {
-   this.registerPayload.username = this.registerForm.get('username').value;
-   this.registerPayload.email = this.registerForm.get('email').value;
-   this.registerPayload.password =  this.registerForm.get('password').value;
-   this.registerPayload.confirmPassword = this.registerForm.get('confirmPassword').value;
-   this.registerPayload.firstName = this.registerForm.get('firstName').value;
-   this.registerPayload.lastName = this.registerForm.get('lastName').value;
-   this.registerPayload.aboutMe = this.registerForm.get('aboutMe').value;
+  submit() {
+    this.success = false;
+    if ( !this.signup.valid ) {
+      markAllAsDirty(this.signup);
+      return;
+    }
 
-   this.authService.register(this.registerPayload).subscribe(data => {
-      console.log('register success!');
-      this.router.navigateByUrl('/register-success');
-    }, error => {
-      console.log('register failed...');
+    this.http.post('http://localhost:8080/api/auth/register', toFormData(this.signup.value), {
+      reportProgress: true,
+      observe: 'events'
+    }).pipe(
+      uploadProgress(progress => (this.progress = progress)),
+      toResponseBody()
+    ).subscribe(res => {
+      this.progress = 0;
+      this.success = true;
+      this.signup.reset();
     });
   }
+
+  hasError( field: string, error: string ) {
+    const control = this.signup.get(field);
+    return control.dirty && control.hasError(error);
+  }
+}
+
+export function markAllAsDirty( form: FormGroup ) {
+  for ( const control of Object.keys(form.controls) ) {
+    form.controls[control].markAsDirty();
+  }
+}
+
+export function toFormData<T>( formValue: T ) {
+  const formData = new FormData();
+
+  for ( const key of Object.keys(formValue) ) {
+    const value = formValue[key];
+    formData.append(key, value);
+  }
+
+  return formData;
 }

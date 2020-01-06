@@ -28,7 +28,6 @@ import { MatToolbarModule,
   MatCardModule,
   MatButtonModule,
   MatProgressBarModule } from '@angular/material';
-import { FormTestComponent } from './form-test/form-test.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ProgressComponent } from './progress/progress.component';
 import { DisplayProfileComponent } from './display-profile/display-profile.component';
@@ -49,7 +48,6 @@ import { DisplayProfileComponent } from './display-profile/display-profile.compo
     CreateCampaignComponent,
     ImageUploadComponent,
     NewCampaignEditionSelectionComponent,
-    FormTestComponent,
     FileUploadComponent,
     ProgressComponent,
     DisplayProfileComponent
@@ -80,7 +78,6 @@ import { DisplayProfileComponent } from './display-profile/display-profile.compo
       {path: 'post/:postId/add-comment', component: AddCommentComponent},
       {path: 'select-edition/create-campaign', component: CreateCampaignComponent},
       {path: 'select-edition', component: NewCampaignEditionSelectionComponent},
-      {path: 'form-test', component: FormTestComponent},
       {path: 'profile-test', component: DisplayProfileComponent}
     ]),
     BrowserAnimationsModule

@@ -1,31 +1,46 @@
+<div class="container" style="margin-top: 20px; max-width: 50%;">
 
-<div class ="loginpart" align ="center">
-  <form class="form-signin" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <h1 class="h3 mb-3 font-weight-normal">Sign-up</h1>
+  <form [formGroup]="signup" (ngSubmit)="submit()">
     <div class="form-group">
-      <label for="inputUsername" class="sr-only"></label>
-      <input type="text" id="inputUsername" [formControlName]="'username'" class="form-control" placeholder="Username" required="" autofocus="">
+      <label>Email address</label>
+      <input type="email" class="form-control" formControlName="email" placeholder="Email">
+      <div class="invalid-feedback" style="display: block">
+        <ng-container *ngIf="hasError('email', 'required')">This field is required</ng-container>
+      </div>
     </div>
+
     <div class="form-group">
-      <label for="inputPassword" class="sr-only"></label>
-      <input type="password" id="inputPassword" [formControlName]="'password'" class="form-control" placeholder="Password" required="">
+      <label>Username</label>
+      <input type="text" class="form-control" formControlName="username" placeholder="Username">
+      <div class="invalid-feedback" style="display: block">
+        <ng-container *ngIf="hasError('username', 'required')">This field is required</ng-container>
+      </div>
     </div>
+
     <div class="form-group">
-      <label for="inputConfirmPassword" class="sr-only"></label>
-      <input type="password" id="inputConfirmPassword" [formControlName]="'confirmPassword'" class="form-control" placeholder="Confirm Password" required="">
+      <label>Password</label>
+      <input type="password" class="form-control" formControlName="password" placeholder="Password">
+      <div class="invalid-feedback" style="display: block">
+        <ng-container *ngIf="hasError('password', 'required')">This field is required</ng-container>
+      </div>
     </div>
+
     <div class="form-group">
-      <label for="inputEmail" class="sr-only"></label>
-      <input type="text" id="inputEmail" [formControlName]="'email'"class="form-control" placeholder="Email" required="" autofocus="">
+      <label>First Name</label>
+      <input type="text" class="form-control" formControlName="firstName" placeholder="First Name">
+      <div class="invalid-feedback" style="display: block">
+        <ng-container *ngIf="hasError('firstName', 'required')">This field is required</ng-container>
+      </div>
     </div>
+
     <div class="form-group">
-      <label for="inputFirstName" class="sr-only"></label>
-      <input type="text" id="inputFirstName" [formControlName]="'firstName'"class="form-control" placeholder="First Name" required="" autofocus="">
+      <label>Last Name</label>
+      <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+      <div class="invalid-feedback" style="display: block">
+        <ng-container *ngIf="hasError('lastName', 'required')">This field is required</ng-container>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="inputLastName" class="sr-only"></label>
-      <input type="text" id="inputLastName" [formControlName]="'lastName'"class="form-control" placeholder="Last Name" required="" autofocus="">
-    </div>
+
     <div class="form-group">
       <label class="inputAboutMe"></label>
       <p>About Me</p>
@@ -38,6 +53,16 @@
       </editor>
     </div>
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+    <div class="form-group">
+      <app-file-upload formControlName="image" [progress]="progress"></app-file-upload>
+      <div class="invalid-feedback" style="display: block">
+        <ng-container *ngIf="hasError('image', 'required')">This field is required</ng-container>
+        <ng-container *ngIf="hasError('image', 'requiredFileType')">Only PNG 🤡</ng-container>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
   </form>
+
 </div>
