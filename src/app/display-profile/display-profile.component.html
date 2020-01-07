@@ -1,38 +1,9 @@
-
-<!--<div class="content">-->
-<!--  <div class="container">-->
-<!--    <div class="row">-->
-<!--      <div class="col-md-8">-->
-<!--        <div class="profile-header">-->
-<!--          <img class="profile-picture" [src]="'data:image/png;base64,'+this.image"  alt="profile-pic" height="100px" width="100px"/>-->
-<!--          <span class="profile-username">-->
-<!--              {{this.profile.username}}-->
-<!--          </span>-->
-<!--        </div>-->
-<!--       <div class="user-details-firstName">-->
-<!--         <label>First Name:</label>-->
-<!--         {{this.profile.firstName}}-->
-<!--       </div>-->
-<!--        <div class="user-details-lastName">-->
-<!--          <label>Last Name:</label>-->
-<!--          {{this.profile.lastName}}-->
-<!--        </div>-->
-<!--        <div class="user-details-email">-->
-<!--          <label>Email:</label>-->
-<!--          {{this.profile.email}}-->
-<!--        </div>-->
-<!--        <div class="user-details-aboutMe">-->
-<!--          <label>About Me:</label>-->
-<!--          {{this.profile.aboutMe}}-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+<div class="content">
 <div class="card">
   <img class="profile-picture" [src]="'data:image/png;base64,'+this.image"  alt="profile-pic" height="100px" width="100px"/>
   <h1>{{this.profile.username}}</h1>
   <p class="title">{{this.profile.firstName}} {{this.profile.lastName}}</p>
   <p class="email">{{this.profile.email}}</p>
   <p class="aboutMe" [innerHTML]="profile.aboutMe"></p>
+</div>
 </div>

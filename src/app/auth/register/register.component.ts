@@ -1,9 +1,9 @@
 import { HttpClient, HttpEvent, HttpEventType, HttpResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { pipe } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
 import { requiredFileType } from './upload-file-validators';
+import {Component} from '@angular/core';
 
 export function uploadProgress<T>( cb: ( progress: number ) => void ) {
   return tap(( event: HttpEvent<T> ) => {

@@ -20,10 +20,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'group3-blog-frontend'`, () => {
+  it(`should have as title 'Roll4Initiative'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('group3-blog-frontend');
+    expect(app.title).toEqual('Roll4Initiative');
   });
 
   it('should render title', () => {

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
-import {CommentPayload} from "./comment-payload";
-import {AddCommentService} from "../add-comment.service";
-import {Router} from "@angular/router";
+import {FormControl, FormGroup} from '@angular/forms';
+import {CommentPayload} from './comment-payload';
+import {AddCommentService} from '../add-comment.service';
+import {Router} from '@angular/router';
 import { Subscription } from 'rxjs';
-import {ActivatedRoute} from '@angular/router'
+import {ActivatedRoute} from '@angular/router';
 
 
 @Component({
@@ -23,7 +23,7 @@ export class AddCommentComponent implements OnInit {
   constructor(private addcommentService: AddCommentService, private router: Router, private route: ActivatedRoute) {
     this.addCommentForm = new FormGroup({
       body: this.body
-    
+
     });
     this.commentPayload = {
       postId: '',
@@ -34,14 +34,14 @@ export class AddCommentComponent implements OnInit {
 
   ngOnInit() {
     this.routeSub = this.route.params.subscribe(params => {
-     this.postId = params['postId']
+     this.postId = params.postId;
     });
   }
 
-  //scope.saveComment=function(){
+  // scope.saveComment=function(){
    // var postID=scope.postInstance._id,
 
-   
+
 
   addComment() {
     this.commentPayload.postId = this.postId;
