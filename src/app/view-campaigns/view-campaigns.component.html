@@ -1,0 +1,22 @@
+<div class="content">
+  <div class="container">
+    <div class="row" *ngFor="let campaign of campaigns | async">
+      <div class="campaign-list">
+        <h3><a routerLink="/campaign/{{campaign.campaignId}}" class="campaign-name">
+          <b>{{campaign.campaignName}}</b>
+        </a>
+        </h3>
+        <div>
+          <i class="fas fa-user"></i> Owner: <p>{{campaign.owner}}</p>
+        </div>
+        <p [innerHTML]="campaign.description"></p>
+        <div>
+          <a routerLink="/post/{{campaign.campaignId}}" class="myButton">View Campaign Details</a>
+        </div>
+        <hr>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
+

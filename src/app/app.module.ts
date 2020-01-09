@@ -57,6 +57,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { ViewCampaignsComponent } from './view-campaigns/view-campaigns.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     NewCampaignEditionSelectionComponent,
     FileUploadComponent,
     ProgressComponent,
-    DisplayProfileComponent
+    DisplayProfileComponent,
+    ViewCampaignsComponent
   ],
   imports: [
     BrowserModule,
@@ -131,7 +133,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
       {path: 'post/:postId/add-comment', component: AddCommentComponent},
       {path: 'select-edition/create-campaign', component: CreateCampaignComponent},
       {path: 'select-edition', component: NewCampaignEditionSelectionComponent},
-      {path: 'profile-test', component: DisplayProfileComponent}
+      {path: 'profile-test', component: DisplayProfileComponent},
+      {path: 'campaigns', component: ViewCampaignsComponent}
     ]),
     BrowserAnimationsModule,
     MatToolbarModule,
