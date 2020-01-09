@@ -2,10 +2,11 @@
   <div class="container">
     <div class="row" *ngFor="let campaign of campaigns | async">
       <div class="campaign-list">
-        <h3><a routerLink="/campaign/{{campaign.campaignId}}" class="campaign-name">
+        <img class="campaign-picture" [src]="'campaigns:campaignPicture/png;base64,'+this.campaign.campaignPicture"  alt="campaign-pic" height="250px" width="250px"/>
+<!--        <h3><a routerLink="/campaign/{{campaign.campaignId}}" class="campaign-name">-->
           <b>{{campaign.campaignName}}</b>
-        </a>
-        </h3>
+<!--        </a>-->
+<!--        </h3>-->
         <div>
           <i class="fas fa-user"></i> Owner: <p>{{campaign.owner}}</p>
         </div>
