@@ -137,7 +137,7 @@ import {SafeUrlPipeService} from './safe-url-pipe.service';
       {path: 'post/:postId/add-comment', component: AddCommentComponent},
       {path: 'select-edition/create-campaign', component: CreateCampaignComponent},
       {path: 'select-edition', component: NewCampaignEditionSelectionComponent},
-      {path: 'profile-test', component: DisplayProfileComponent},
+      {path: 'view-profile', component: DisplayProfileComponent},
       {path: 'campaigns', component: ViewCampaignsComponent}
     ]),
     BrowserAnimationsModule,
