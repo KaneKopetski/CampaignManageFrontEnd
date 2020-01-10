@@ -3,7 +3,6 @@ import { CampaignService} from '../campaign.service';
 import { Observable } from 'rxjs';
 import { CampaignResponse} from './campaign-response';
 import {LocalStorageService} from 'ngx-webstorage';
-import {ProfilePayload} from '../display-profile/profile-payload';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {tap} from 'rxjs/operators';
@@ -17,17 +16,18 @@ import {tap} from 'rxjs/operators';
 export class ViewCampaignsComponent implements OnInit {
   campaigns: Observable<Array<CampaignResponse>>;
   username: string;
-  response: any;
 
   constructor(private campaignService: CampaignService, private localStorageService: LocalStorageService, private httpClient: HttpClient) {
   }
 
   ngOnInit() {
+   this.username = this.localStorageService.retrieve('username');
     // this.username = this.localStorageService.retrieve('username');
     // this.httpClient
     //   .get('http://localhost:8080/api/campaigns/owner/' + this.username)
     //     .subscribe(response => this.campaigns = response.data);
-    this.campaigns = this.campaignService.getAllCampaignsForUser(this.localStorageService.retrieve('username'));
+   this.campaigns = this.campaignService.getAllCampaignsForUser(this.username);
+   console.log(this.campaigns);
   }
 
   // ngOnInit() {

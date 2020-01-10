@@ -1,22 +1,23 @@
 <div class="content">
   <div class="container">
     <div class="row" *ngFor="let campaign of campaigns | async">
-      <div class="campaign-list">
-        <img class="campaign-picture" [src]="'campaigns:campaignPicture/png;base64,'+this.campaign.campaignPicture"  alt="campaign-pic" height="250px" width="250px"/>
-<!--        <h3><a routerLink="/campaign/{{campaign.campaignId}}" class="campaign-name">-->
+      <div class="campaign">
+        <img class="campaign-picture" [src]="'data:image/png;base64,' + this.campaign.campaignPicture.data" alt="campaign-pic">
+
+        <!--        <h3><a routerLink="/campaign/{{campaign.campaignId}}" class="campaign-name">-->
           <b>{{campaign.campaignName}}</b>
 <!--        </a>-->
 <!--        </h3>-->
         <div>
-          <i class="fas fa-user"></i> Owner: <p>{{campaign.owner}}</p>
+          Owner: <p>{{campaign.owner}}</p>
         </div>
         <p [innerHTML]="campaign.description"></p>
-        <div>
-          <a routerLink="/post/{{campaign.campaignId}}" class="myButton">View Campaign Details</a>
-        </div>
-        <hr>
+<!--        <div>-->
+<!--          <a routerLink="/post/{{campaign.campaignId}}" class="myButton">View Campaign Details</a>-->
+<!--        </div>-->
+<!--        <hr>-->
       </div>
-      <hr>
+<!--      <hr>-->
     </div>
   </div>
 </div>

@@ -58,6 +58,8 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { ViewCampaignsComponent } from './view-campaigns/view-campaigns.component';
+import {SafeHtmlPipeService} from './safe-html-pipe.service';
+import {SafeUrlPipeService} from './safe-url-pipe.service';
 
 @NgModule({
   declarations: [
@@ -78,7 +80,9 @@ import { ViewCampaignsComponent } from './view-campaigns/view-campaigns.componen
     FileUploadComponent,
     ProgressComponent,
     DisplayProfileComponent,
-    ViewCampaignsComponent
+    ViewCampaignsComponent,
+    SafeHtmlPipeService,
+    SafeUrlPipeService
   ],
   imports: [
     BrowserModule,

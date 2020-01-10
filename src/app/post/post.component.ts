@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
 export class PostComponent implements OnInit {
   post: PostPayload;
   permaLink: number;
-  comments: Observable<Array<CommentPayload>>
+  comments: Observable<Array<CommentPayload>>;
 
   constructor(private router: ActivatedRoute, private postService: AddPostService, private commentService: AddCommentService) {
   }
@@ -33,7 +33,7 @@ export class PostComponent implements OnInit {
       console.log('Failure Response');
     });
 
-   this.comments = this.commentService.getAllComments(this.permaLink);
+    this.comments = this.commentService.getAllComments(this.permaLink);
   }
 
 }
