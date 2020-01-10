@@ -20,7 +20,7 @@ export class CampaignService {
   getAllCampaignsForUser(username: string): Observable<Array<CampaignResponse>> {
     return this.httpClient.get<Array<CampaignResponse>>('http://localhost:8080/api/campaigns/owner/' + username);
   }
-  // getPost(permaLink: number): Observable<CampaignPayload> {
-  //   return this.httpClient.get<CampaignPayload>('https://zcw-group3blogproject.cfapps.io/api/posts/get/' + permaLink);
-  // }
+  getCampaignById(permaLink: number): Observable<CampaignResponse> {
+    return this.httpClient.get<CampaignResponse>('http://localhost:8080/api/campaigns/get/' + permaLink);
+  }
 }

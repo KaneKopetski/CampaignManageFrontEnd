@@ -1,24 +1,33 @@
-<div class="content">
-  <div class="container">
-    <div class="row" *ngFor="let campaign of campaigns | async">
-      <div class="campaign">
-        <img class="campaign-picture" [src]="'data:image/png;base64,' + this.campaign.campaignPicture.data" alt="campaign-pic">
+<!--<div class="content">-->
+<!--  <div class="container">-->
+<!--    <div class="row" *ngFor="let campaign of campaigns | async">-->
+<!--      <div class="campaign">-->
+<!--        <img class="campaign-picture" [src]="'data:image/png;base64,'+this.campaign.campaignPicture.data" alt="campaign-pic">-->
 
-        <!--        <h3><a routerLink="/campaign/{{campaign.campaignId}}" class="campaign-name">-->
-          <b>{{campaign.campaignName}}</b>
-<!--        </a>-->
-<!--        </h3>-->
-        <div>
-          Owner: <p>{{campaign.owner}}</p>
-        </div>
-        <p [innerHTML]="campaign.description"></p>
+<!--        &lt;!&ndash;        <h3><a routerLink="/campaign/{{campaign.campaignId}}" class="campaign-name">&ndash;&gt;-->
+<!--          <b>{{campaign.campaignName}}</b>-->
+<!--&lt;!&ndash;        </a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </h3>&ndash;&gt;-->
 <!--        <div>-->
-<!--          <a routerLink="/post/{{campaign.campaignId}}" class="myButton">View Campaign Details</a>-->
+<!--          Owner: <p>{{campaign.owner}}</p>-->
 <!--        </div>-->
-<!--        <hr>-->
-      </div>
-<!--      <hr>-->
-    </div>
+<!--        <p [innerHTML]="campaign.description"></p>-->
+<!--&lt;!&ndash;        <div>&ndash;&gt;-->
+<!--&lt;!&ndash;          <a routerLink="/post/{{campaign.campaignId}}" class="myButton">View Campaign Details</a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        <hr>&ndash;&gt;-->
+<!--      </div>-->
+<!--&lt;!&ndash;      <hr>&ndash;&gt;-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="content" *ngIf="campaigns">
+  <div class="card" *ngFor="let campaign of campaigns | async">
+<!--    <img class="campaign-image" [src]="'data:image/png;base64,'+this.campaign.campaignPicture.data" alt="campaign-picture" height="100px" width="100px"/>-->
+
+    <!--    <img class="campaign-image" [src]="'data:image/png;base64,'+this.campaign.campaignPicture.data"  alt="campaign-picture" height="100px" width="100px"/>-->
+    <h1>{{this.campaign.campaignName}}</h1>
+    <p class="aboutMe" [innerHTML]="campaign.description"></p>
   </div>
 </div>
-
