@@ -60,8 +60,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { ViewCampaignsComponent } from './view-campaigns/view-campaigns.component';
 import {SafeHtmlPipeService} from './safe-html-pipe.service';
 import {SafeUrlPipeService} from './safe-url-pipe.service';
-import { ViewSingleCampaignComponent } from './view-single-campaign/view-single-campaign.component';
-import {DisplayCampaignComponent} from "./display-single-campaign/display-campaign.component";
+import {DisplayCampaignComponent} from './display-single-campaign/display-campaign.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +84,6 @@ import {DisplayCampaignComponent} from "./display-single-campaign/display-campai
     ViewCampaignsComponent,
     SafeHtmlPipeService,
     SafeUrlPipeService,
-    ViewSingleCampaignComponent,
     DisplayCampaignComponent
   ],
   imports: [
