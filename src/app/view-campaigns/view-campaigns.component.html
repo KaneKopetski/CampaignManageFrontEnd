@@ -22,12 +22,16 @@
 <!--  </div>-->
 <!--</div>-->
 
-<div class="content" *ngIf="campaigns">
-  <div class="card" *ngFor="let campaign of campaigns | async">
-<!--    <img class="campaign-image" [src]="'data:image/png;base64,'+this.campaign.campaignPicture.data" alt="campaign-picture" height="100px" width="100px"/>-->
+<div class="content">
+  <ng-container *ngIf=campaigns>
 
-    <!--    <img class="campaign-image" [src]="'data:image/png;base64,'+this.campaign.campaignPicture.data"  alt="campaign-picture" height="100px" width="100px"/>-->
-    <h1>{{this.campaign.campaignName}}</h1>
+  <div class="card" *ngFor="let campaign of campaigns">
+    <img class="campaign-image" [src]="'data:image/png;base64,'+this.campaign.campaignPicture.data" alt="campaign-picture" height="100px" width="100px"/>
+<!--    <img src="data:image/png;base64,"+{{this.campaign.campaignPicture.data}} alt="campaign-picture" height="100px" width="100px"/>-->
+    <!--        <img class="campaign-image" [src]="'data:image/png;base64,'+this.campaign."  alt="campaign-picture" height="100px" width="100px"/>-->
+<!--    <h1>{{campaign.}}</h1>-->
+    <p>{{campaign.campaignName}}</p>
     <p class="aboutMe" [innerHTML]="campaign.description"></p>
   </div>
+  </ng-container>
 </div>

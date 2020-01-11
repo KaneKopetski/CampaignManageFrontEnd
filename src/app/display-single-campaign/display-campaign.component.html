@@ -1,0 +1,9 @@
+<div class="content">
+  <div class="card" *ngIf=campaignResponse>
+    <img class="campaign-image" [src]="'data:image/png;base64,'+this.image"  alt="profile-pic" height="100px" width="100px"/>
+    <h1>{{this.campaignResponse.campaignName}}</h1>
+    <p class="edition">{{this.campaignResponse.edition}}</p>
+    <p class="owner">{{this.campaignResponse.owner}}</p>
+    <p class="description" [innerHTML]="campaignResponse.description"></p>
+  </div>
+</div>

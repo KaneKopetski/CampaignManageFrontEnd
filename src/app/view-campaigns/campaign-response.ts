@@ -4,13 +4,7 @@ export class CampaignResponse {
   edition: number;
   description: string;
   owner: string;
-  campaignPicture: {
-    id: string;
-    fileName: string;
-    fileType: string;
-    data: Blob;
-  };
-  worldMap: {
+  campaignImage: {
     id: string;
     fileName: string;
     fileType: string;

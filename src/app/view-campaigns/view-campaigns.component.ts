@@ -14,12 +14,12 @@ export class ViewCampaignsComponent implements OnInit {
 
   constructor(private campaignService: CampaignService, private localStorageService: LocalStorageService, private httpClient: HttpClient) {
   }
-  public campaigns: Observable<Array<CampaignResponse>>;
+  public campaigns: Array<CampaignResponse>;
   public username: string;
 
   ngOnInit() {
-    // this.username = this.localStorageService.retrieve('username');
-    //
+    this.username = this.localStorageService.retrieve('username');
+
     // this.campaigns = this.campaignService.getAllCampaignsForUser(this.username);
     // console.log(this.campaigns);
     this.campaignService.getAllCampaignsForUser(this.username).subscribe((response: any) => {
@@ -28,5 +28,4 @@ export class ViewCampaignsComponent implements OnInit {
       console.log(error);
     });
   }
-
 }

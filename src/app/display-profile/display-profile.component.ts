@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ProfilePayload} from './profile-payload';
 import {ProfileService} from '../profile.service';
 import {ActivatedRoute} from '@angular/router';
-import { Observable } from 'rxjs';
 import {LocalStorageService} from 'ngx-webstorage';
 
 @Component({

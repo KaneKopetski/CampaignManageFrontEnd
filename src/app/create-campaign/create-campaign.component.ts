@@ -33,7 +33,7 @@ export class CreateCampaignComponent {
     campaignName: new FormControl(null, Validators.required),
     edition: new FormControl(null, Validators.required),
     description: new FormControl(null, Validators.required),
-    worldMap: new FormControl(null, [Validators.required, requiredFileType('png')]),
+    // worldMap: new FormControl(null, [Validators.required, requiredFileType('png')]),
     campaignImage: new FormControl(null, [Validators.required, requiredFileType('png')])
 
   });

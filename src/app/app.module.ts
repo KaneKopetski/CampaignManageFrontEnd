@@ -60,6 +60,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { ViewCampaignsComponent } from './view-campaigns/view-campaigns.component';
 import {SafeHtmlPipeService} from './safe-html-pipe.service';
 import {SafeUrlPipeService} from './safe-url-pipe.service';
+import { ViewSingleCampaignComponent } from './view-single-campaign/view-single-campaign.component';
+import {DisplayCampaignComponent} from "./display-single-campaign/display-campaign.component";
 
 @NgModule({
   declarations: [
@@ -82,7 +84,9 @@ import {SafeUrlPipeService} from './safe-url-pipe.service';
     DisplayProfileComponent,
     ViewCampaignsComponent,
     SafeHtmlPipeService,
-    SafeUrlPipeService
+    SafeUrlPipeService,
+    ViewSingleCampaignComponent,
+    DisplayCampaignComponent
   ],
   imports: [
     BrowserModule,
@@ -138,7 +142,8 @@ import {SafeUrlPipeService} from './safe-url-pipe.service';
       {path: 'select-edition/create-campaign', component: CreateCampaignComponent},
       {path: 'select-edition', component: NewCampaignEditionSelectionComponent},
       {path: 'view-profile', component: DisplayProfileComponent},
-      {path: 'campaigns', component: ViewCampaignsComponent}
+      {path: 'campaigns', component: ViewCampaignsComponent},
+      {path: 'campaign', component: DisplayCampaignComponent}
     ]),
     BrowserAnimationsModule,
     MatToolbarModule,
