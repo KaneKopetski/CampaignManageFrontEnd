@@ -57,7 +57,6 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import { ViewCampaignsComponent } from './view-campaigns/view-campaigns.component';
 import {SafeHtmlPipeService} from './safe-html-pipe.service';
 import {SafeUrlPipeService} from './safe-url-pipe.service';
 import {DisplayCampaignComponent} from './display-single-campaign/display-campaign.component';
@@ -82,7 +81,6 @@ import {DisplayCampaignSummariesComponent} from './display-campaign-summaries/di
     FileUploadComponent,
     ProgressComponent,
     DisplayProfileComponent,
-    ViewCampaignsComponent,
     SafeHtmlPipeService,
     SafeUrlPipeService,
     DisplayCampaignComponent,
@@ -143,7 +141,7 @@ import {DisplayCampaignSummariesComponent} from './display-campaign-summaries/di
       {path: 'select-edition', component: NewCampaignEditionSelectionComponent},
       {path: 'view-profile', component: DisplayProfileComponent},
       {path: 'campaigns', component: DisplayCampaignSummariesComponent},
-      {path: 'campaign', component: DisplayCampaignComponent}
+      {path: 'campaign/:campaignId', component: DisplayCampaignComponent}
     ]),
     BrowserAnimationsModule,
     MatToolbarModule,

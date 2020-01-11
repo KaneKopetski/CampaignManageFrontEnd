@@ -2,15 +2,17 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {LocalStorageService} from 'ngx-webstorage';
 import {CampaignService} from '../campaign.service';
-import {CampaignResponse} from '../view-campaigns/campaign-response';
+import {CampaignResponse} from './campaign-response';
 
 @Component({
   selector: 'app-display-profile',
   templateUrl: './display-campaign.component.html',
   styleUrls: ['./display-campaign.component.css']
 })
+
 export class DisplayCampaignComponent implements OnInit {
   campaignResponse: CampaignResponse;
+  permaLink: number;
   image: Blob;
   image2: Blob;
 
@@ -18,7 +20,7 @@ export class DisplayCampaignComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.campaignService.getCampaignById(2).subscribe((data: CampaignResponse) => {
+    this.campaignService.getCampaignById(this.permaLink).subscribe((data: CampaignResponse) => {
       this.campaignResponse = data;
       this.image = this.campaignResponse.campaignImage.data;
       this.image2 = this.campaignResponse.worldMap.data;

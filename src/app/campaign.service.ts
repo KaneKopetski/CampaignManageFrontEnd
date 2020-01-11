@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CampaignPayload } from './create-campaign/campaign-payload';
 import {Observable} from 'rxjs';
-import {CampaignResponse} from './view-campaigns/campaign-response';
+import {CampaignPayload} from './create-campaign/campaign-payload';
+import {CampaignResponse} from './display-single-campaign/campaign-response';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,6 @@ import {CampaignResponse} from './view-campaigns/campaign-response';
 export class CampaignService {
 
   constructor(private httpClient: HttpClient) {
-
    }
 
   createCampaign(campaignPayload: CampaignPayload) {
