@@ -33,13 +33,13 @@
         <ng-container *ngIf="hasError('campaignImage', 'requiredFileType')">Only PNG 🤡</ng-container>
       </div>
     </div>
-<!--    <div class="form-group">-->
-<!--      <app-file-upload formControlName="worldMap" [progress]="progress"></app-file-upload>-->
-<!--      <div class="invalid-feedback" style="display: block">-->
-<!--        <ng-container *ngIf="hasError('worldMap', 'required')">This field is required</ng-container>-->
-<!--        <ng-container *ngIf="hasError('worldMap', 'requiredFileType')">Only PNG 🤡</ng-container>-->
-<!--      </div>-->
-<!--    </div>-->
+    <div class="form-group">
+      <app-file-upload formControlName="worldMap" [progress]="progress"></app-file-upload>
+      <div class="invalid-feedback" style="display: block">
+        <ng-container *ngIf="hasError('worldMap', 'required')">This field is required</ng-container>
+        <ng-container *ngIf="hasError('worldMap', 'requiredFileType')">Only PNG 🤡</ng-container>
+      </div>
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
