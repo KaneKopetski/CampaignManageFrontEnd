@@ -1,0 +1,33 @@
+<!--<ng-container *ngIf=campaigns>-->
+<!--  <div class="row" >-->
+<!--    <div class="card" *ngFor="let campaign of campaigns | async">-->
+<!--      <img class="campaign-image" [src]="'data:image/png;base64,'+this.image"  alt="campaign-image" height="100px" width="100px"/>-->
+<!--      <h1>{{this.campaign.campaignName}}</h1>-->
+<!--      <p class="edition">{{this.campaignResponse.edition}}</p>-->
+<!--      <p class="owner">{{this.campaignResponse.owner}}</p>-->
+<!--      <p class="description" [innerHTML]="campaignResponse.description"></p>-->
+<!--      <h3>World Map</h3>-->
+<!--  </div>-->
+<!--  </div>-->
+<!--</ng-container>-->
+
+<div class="content">
+  <div class="container">
+    <div class="row" *ngFor="let campaign of campaigns | async">
+      <div class="blogpost">
+              <img class="campaign-image" [src]="'data:image/png;base64,'+this.campaign.campaignImage.data"  alt="campaign-image" height="100px" width="100px"/>
+
+        <h3><a routerLink="/post/{{campaign.campaignName}}" class="blog-title"><b>{{campaign.owner}}</b></a></h3>
+        <div>
+          <i class="fas fa-user"></i> Author: <p>{{campaign.edition}}</p>
+        </div>
+        <p [innerHTML]="campaign.description"></p>
+        <div>
+        </div>
+        <hr>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
+

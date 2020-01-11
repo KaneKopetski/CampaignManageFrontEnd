@@ -61,6 +61,7 @@ import { ViewCampaignsComponent } from './view-campaigns/view-campaigns.componen
 import {SafeHtmlPipeService} from './safe-html-pipe.service';
 import {SafeUrlPipeService} from './safe-url-pipe.service';
 import {DisplayCampaignComponent} from './display-single-campaign/display-campaign.component';
+import {DisplayCampaignSummariesComponent} from './display-campaign-summaries/display-campaign-summaries.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import {DisplayCampaignComponent} from './display-single-campaign/display-campai
     ViewCampaignsComponent,
     SafeHtmlPipeService,
     SafeUrlPipeService,
-    DisplayCampaignComponent
+    DisplayCampaignComponent,
+    DisplayCampaignSummariesComponent
   ],
   imports: [
     BrowserModule,
@@ -140,7 +142,7 @@ import {DisplayCampaignComponent} from './display-single-campaign/display-campai
       {path: 'select-edition/create-campaign', component: CreateCampaignComponent},
       {path: 'select-edition', component: NewCampaignEditionSelectionComponent},
       {path: 'view-profile', component: DisplayProfileComponent},
-      {path: 'campaigns', component: ViewCampaignsComponent},
+      {path: 'campaigns', component: DisplayCampaignSummariesComponent},
       {path: 'campaign', component: DisplayCampaignComponent}
     ]),
     BrowserAnimationsModule,

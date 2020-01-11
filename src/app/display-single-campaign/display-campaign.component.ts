@@ -21,7 +21,7 @@ export class DisplayCampaignComponent implements OnInit {
     this.campaignService.getCampaignById(2).subscribe((data: CampaignResponse) => {
       this.campaignResponse = data;
       this.image = this.campaignResponse.campaignImage.data;
-      this.image2 = this.campaignResponse.campaignImage.data;
+      this.image2 = this.campaignResponse.worldMap.data;
     }, (err: any) => {
       console.log('Failure Response');
     });
