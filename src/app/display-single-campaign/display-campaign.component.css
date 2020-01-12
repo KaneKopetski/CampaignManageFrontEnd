@@ -2,8 +2,9 @@
   height: 100vh;
 }
 
-.profile-picture {
-  border-radius: 50%;
+.campaign-worldmap {
+  max-height: 800px;
+  max-width: 1200px;
 }
 
 .card {

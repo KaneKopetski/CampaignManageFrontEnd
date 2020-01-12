@@ -1,19 +1,7 @@
 <div class="content">
+  <h1>My Campaigns</h1>
     <div class="container">
-      <div class="row" *ngFor="let post of posts | async">
-        <div class="blogpost">
-          <h3><a routerLink="/post/{{post.postId}}" class="blog-title"><b>{{post.title}}</b></a></h3>
-          <div>
-            <i class="fas fa-user"></i> Author: <p>{{post.username}}</p>
-          </div>
-          <p [innerHTML]="post.content"></p>
-          <div>
-            <a routerLink="/post/{{post.postId}}" class="myButton">Take a Stabb at it 🔪</a>
-          </div>
-          <hr>
-        </div>
-        <hr>
-      </div>
+      <app-display-campaign-summaries></app-display-campaign-summaries>
     </div>
   </div>
 

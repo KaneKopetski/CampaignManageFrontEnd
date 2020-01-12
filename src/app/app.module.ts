@@ -62,6 +62,7 @@ import {SafeUrlPipeService} from './safe-url-pipe.service';
 import {DisplayCampaignComponent} from './display-single-campaign/display-campaign.component';
 import {DisplayCampaignSummariesComponent} from './display-campaign-summaries/display-campaign-summaries.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
