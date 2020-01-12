@@ -4,6 +4,7 @@
   <input class="file-input" type="file">
 </div>
 <div class="image-preview mb-3" *ngIf="previewUrl">
+  <p class="preview-header">Image Preview</p>
   <img [src]="previewUrl" alt="preview" height="300" />
 </div>
 <app-progress [progress]="progress"></app-progress>

@@ -51,3 +51,11 @@
 .file-input:focus {
   outline: none;
 }
+
+.image-preview {
+  text-align: center;
+}
+
+.preview-header {
+  font-size: x-large;
+}
