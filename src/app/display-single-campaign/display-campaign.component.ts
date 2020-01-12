@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {LocalStorageService} from 'ngx-webstorage';
 import {CampaignService} from '../campaign.service';
 import {CampaignResponse} from './campaign-response';
 
@@ -11,19 +10,22 @@ import {CampaignResponse} from './campaign-response';
 })
 
 export class DisplayCampaignComponent implements OnInit {
-  campaignResponse: CampaignResponse;
+  campaign: CampaignResponse;
   permaLink: number;
   image: Blob;
   image2: Blob;
 
-  constructor(private router: ActivatedRoute, private campaignService: CampaignService, private localStorageService: LocalStorageService) {
+  constructor(private router: ActivatedRoute, private campaignService: CampaignService) {
   }
 
   ngOnInit() {
+    this.router.params.subscribe(params => {
+      this.permaLink = params['campaignId'];
+    });
     this.campaignService.getCampaignById(this.permaLink).subscribe((data: CampaignResponse) => {
-      this.campaignResponse = data;
-      this.image = this.campaignResponse.campaignImage.data;
-      this.image2 = this.campaignResponse.worldMap.data;
+      this.campaign = data;
+      this.image = this.campaign.campaignImage.data;
+      this.image2 = this.campaign.worldMap.data;
     }, (err: any) => {
       console.log('Failure Response');
     });
