@@ -1,7 +1,7 @@
 export class CampaignResponseLessWorldMap {
   campaignId: number;
   campaignName: string;
-  edition: number;
+  edition: string;
   description: string;
   owner: string;
   campaignImage: {
