@@ -128,7 +128,7 @@ import {DisplayCampaignSummariesComponent} from './display-campaign-summaries/di
     MatPaginatorModule,
     FlexLayoutModule,
     RouterModule.forRoot([
-      // {path: '', component: HomeComponent},
+      {path: '', component: HomeComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'login', component: LoginComponent},
       {path: 'register-success', component: RegisterSuccessComponent},

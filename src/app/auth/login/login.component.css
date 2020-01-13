@@ -15,9 +15,11 @@
   margin-right: auto;
   text-align: center;
   align-items: center;
-  background-color: gray;
 }
 
-
-
-
+.btn {
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-color: blueviolet;
+}
