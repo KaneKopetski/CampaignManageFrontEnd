@@ -4,16 +4,6 @@
   <img src="./assets/img/logo.jpg" class="logo" alt="logo" height="75px" width="75px">
   <br />
   <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
-<!--    <div class="form-group">-->
-<!--      <label for="inputUsername" class="sr-only">Username</label>-->
-<!--      <input type="text" id="inputUsername" [formControlName]="'username'" class="form-control" placeholder="Username" required="" autofocus="">-->
-<!--      <input matInput>-->
-<!--    </div>-->
-<!--    <div class="form-group">-->
-<!--      <label for="inputPassword" class="sr-only">Password</label>-->
-<!--      <input type="password" id="inputPassword" [formControlName]="'password'" class="form-control" placeholder="Password" required="">-->
-<!--    </div>-->
-
     <div class="form-group">
       <mat-form-field class="example-full-width">
         <input matInput placeholder="username" value="" [formControlName]="'username'">
