@@ -31,11 +31,10 @@ constructor(private authService: AuthService, private router: Router) {
     this.loginPayload.username = this.loginForm.get('username').value;
     this.loginPayload.password = this.loginForm.get('password').value;
 
-
     this.authService.login(this.loginPayload).subscribe(data => {
       if (data) {
         console.log('login success');
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/campaigns');
 
       } else {
         console.log('Login failed');
