@@ -1,6 +1,4 @@
-.content {
-  height: 100vh;
-}
+
 
 .profile-picture {
   border-radius: 50%;
@@ -22,4 +20,9 @@
   outline: none;
   border: none;
   background-color: blueviolet;
+}
+
+.sign-up-message {
+  margin-top: 50px;
+  font-size: small;
 }
