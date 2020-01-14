@@ -1,36 +1,29 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span> <img class="banner" routerLink="/home" src="./assets/img/logo-notext-transparent.png"></span>
+    <a routerLink="/home"><span> <img class="banner" src="./assets/img/logo-notext-transparent.png"></span></a>
     <div fxFlex fxLayout fxLayoutAlign="flex-end">
       <ul fxLayout fxLayoutGap="20px">
-        <li fxHide.xs>
-          <button mat-icon-button *ngIf="authService.isAuthenticated()" [routerLink]="'/profile-test'">
+        <button mat-icon-button [matMenuTriggerFor]="auth">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #auth="matMenu">
+          <button mat-menu-item *ngIf="authService.isAuthenticated()" (click)="logout()" [routerLink]="'/login'" >
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Sign out</span>
+          </button>
+          <button mat-menu-item *ngIf="!authService.isAuthenticated()" [routerLink]="'/login'">
+            <mat-icon>settings_power</mat-icon>
+            <span>Sign In</span>
+          </button>
+          <button mat-menu-item *ngIf="authService.isAuthenticated()" [routerLink]="'/view-profile'">
+            <mat-icon>account_box</mat-icon>
+            <span>View/Edit Profile</span>
+          </button>
+          <button mat-menu-item *ngIf="authService.isAuthenticated()" [routerLink]="'/profile-test'">
             <mat-icon>settings</mat-icon>
+            <span>Settings</span>
           </button>
-          <button mat-icon-button *ngIf="!authService.isAuthenticated()" [routerLink]="'/login'">
-            <mat-icon>settings</mat-icon>
-          </button>
-        </li>
-        <li fxHide.xs>
-          <button mat-icon-button>
-            <mat-icon>help_outline</mat-icon>
-          </button>
-        </li>
-        <li>
-          <button mat-icon-button [matMenuTriggerFor]="auth">
-            <mat-icon>person_outline</mat-icon>
-          </button>
-          <mat-menu #auth="matMenu">
-            <button mat-menu-item *ngIf="authService.isAuthenticated()" (click)="logout()" [routerLink]="'/login'" >
-              <mat-icon>exit_to_app</mat-icon>
-              <span>Sign out</span>
-            </button>
-            <button mat-menu-item *ngIf="!authService.isAuthenticated()" [routerLink]="'/login'">
-              <mat-icon>settings_power</mat-icon>
-              <span>Sign In</span>
-            </button>
-          </mat-menu>
-        </li>
+        </mat-menu>
       </ul>
     </div>
   </mat-toolbar-row>
