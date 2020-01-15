@@ -57,3 +57,59 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
+
+
+<div class="content">
+  <div class="card">
+    <br />
+    <form class="form-signup" [formGroup]="signup" (ngSubmit)="submit()" novalidate>
+
+      <mat-card-title>Account Info</mat-card-title>
+
+      <div class="form-group">
+        <mat-form-field class="username">
+          <input matInput placeholder="username" value="" [formControlName]="'username'">
+        </mat-form-field>
+        <ng-container *ngIf="hasError('username', 'required')">This field is required</ng-container>
+      </div>
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput type="password" placeholder="password" value="" [formControlName]="'password'">
+        </mat-form-field>
+      </div>
+
+      <mat-card-title>Personal Info</mat-card-title>
+
+      <div class="form-group">
+        <mat-form-field class="email">
+          <input matInput placeholder="email" value="" [formControlName]="'email'">
+        </mat-form-field>
+        <ng-container *ngIf="hasError('email', 'required')">This field is required</ng-container>
+      </div>
+
+
+      <table class="name-table" cellspacing="0"><tr>
+      <td> <div class="form-group">
+        <mat-form-field class="firstName">
+          <input matInput placeholder="first name" value="" [formControlName]="'firstName'">
+        </mat-form-field>
+        <ng-container *ngIf="hasError('firstName', 'required')">This field is required</ng-container>
+      </div></td>
+      <td> <div class="form-group">
+        <mat-form-field class="lastName">
+          <input matInput placeholder="last name" value="" [formControlName]="'lastName'">
+        </mat-form-field>
+        <ng-container *ngIf="hasError('lastName', 'required')">This field is required</ng-container>
+      </div></td>
+    </tr></table>
+
+
+
+
+      <button class="btn btn-sm btn-primary btn-block" type="submit">Login</button>
+      <p class="sign-up-message">Don't have an account? <a routerLink="/register">Sign Up</a></p>
+    </form>
+  </div>
+</div>
+
+
