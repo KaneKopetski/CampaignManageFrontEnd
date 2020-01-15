@@ -4,6 +4,8 @@ import { pipe } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
 import { requiredFileType } from './upload-file-validators';
 import {Component} from '@angular/core';
+import {Router} from '@angular/router';
+
 
 export function uploadProgress<T>( cb: ( progress: number ) => void ) {
   return tap(( event: HttpEvent<T> ) => {
@@ -40,7 +42,7 @@ export class RegisterComponent {
   });
   success = false;
 
-  constructor( private http: HttpClient ) {
+  constructor( private http: HttpClient, private router: Router) {
   }
 
 
@@ -62,6 +64,8 @@ export class RegisterComponent {
       this.success = true;
       this.signup.reset();
     });
+    this.router.navigateByUrl('/login');
+
   }
 
   hasError( field: string, error: string ) {
