@@ -142,7 +142,8 @@ import {DisplayCampaignSummariesComponent} from './display-campaign-summaries/di
       {path: 'select-edition', component: NewCampaignEditionSelectionComponent},
       {path: 'view-profile', component: DisplayProfileComponent},
       {path: 'campaigns', component: DisplayCampaignSummariesComponent},
-      {path: 'campaign/:campaignId', component: DisplayCampaignComponent}
+      {path: 'campaign/:campaignId', component: DisplayCampaignComponent},
+      {path: 'newcampaign', component: CreateCampaignComponent}
     ]),
     BrowserAnimationsModule,
     MatToolbarModule,

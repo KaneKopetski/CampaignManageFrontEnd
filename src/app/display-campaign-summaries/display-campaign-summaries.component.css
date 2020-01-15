@@ -22,7 +22,7 @@
 
 /*}*/
 
-.campaign-card {
+.campaign-summary-card, .create-campaign-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 350px;
   min-width: 350px;
@@ -33,7 +33,6 @@
   margin-right: auto;
   text-align: center;
   align-items: center;
-  background-color: gray;
   overflow: hidden;
 }
 
@@ -46,16 +45,18 @@
 
 }
 
-.example-card.mat-card {
-  max-width: 300px;
-  margin: 30px;
-  background-color: gray;
-  max-height: 500px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
 .campaign-image {
   background-size: cover;
 }
 
+.create-campaign-box {
+  border: 1px dashed #7c7db3;
+  border-radius: 3px;
+  position: relative;
+  margin: 0 auto;
+  padding: 26px 20px 30px;
+}
+
+.plus-sign {
+  height: 150px;
+  }

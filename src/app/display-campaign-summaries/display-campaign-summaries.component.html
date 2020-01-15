@@ -39,7 +39,31 @@
 
 <div class="content">
 <div class="row">
-<mat-card class="example-card" *ngFor="let campaign of campaigns | async">
+
+<!--  <mat-card class="create-campaign-card">-->
+<!--    <mat-card-header>-->
+<!--      <mat-card-title>-->
+<!--       Create New Campaign-->
+<!--       </mat-card-title>-->
+<!--    <mat-card-content>-->
+<!--      <div class="create-campaign">-->
+  <!--        <p>+</p>-->
+  <!--      </div>-->
+  <!--    </mat-card-content>-->
+<!--    </mat-card-header>-->
+<!--  </mat-card>-->
+
+  <mat-card class="create-campaign-card" routerLink="/newcampaign">
+    <mat-card-header>
+      <mat-card-title>Create Campaign</mat-card-title>
+    </mat-card-header>
+    <div class="create-campaign-box">
+      <img mat-card-image class="plus-sign" src="https://image.flaticon.com/icons/svg/32/32339.svg" alt="plus-sign">
+    </div>
+
+  </mat-card>
+
+<mat-card class="campaign-summary-card" *ngFor="let campaign of campaigns | async">
   <mat-card-header>
     <mat-card-title><a routerLink="/campaign/{{campaign.campaignId}}" class="campaign-name">
       {{this.campaign.campaignName}}
@@ -60,3 +84,10 @@
 </mat-card>
 </div>
 </div>
+
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
+<div class="mat-app-background basic-container">
+  <dialog-overview-example>loading</dialog-overview-example>
+</div>
+<span class="version-info">Current build: 8.2.3</span>
