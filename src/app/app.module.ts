@@ -61,6 +61,9 @@ import {SafeHtmlPipeService} from './safe-html-pipe.service';
 import {SafeUrlPipeService} from './safe-url-pipe.service';
 import {DisplayCampaignComponent} from './display-single-campaign/display-campaign.component';
 import {DisplayCampaignSummariesComponent} from './display-campaign-summaries/display-campaign-summaries.component';
+import {CampaignCreationModalComponent} from './campaign-creation-modal/campaign-creation-modal.component';
+
+
 
 
 @NgModule({
@@ -85,7 +88,8 @@ import {DisplayCampaignSummariesComponent} from './display-campaign-summaries/di
     SafeHtmlPipeService,
     SafeUrlPipeService,
     DisplayCampaignComponent,
-    DisplayCampaignSummariesComponent
+    DisplayCampaignSummariesComponent,
+    CampaignCreationModalComponent
   ],
   imports: [
     BrowserModule,
@@ -150,7 +154,9 @@ import {DisplayCampaignSummariesComponent} from './display-campaign-summaries/di
     MatIconModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true}],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CampaignCreationModalComponent]
+
 })
 export class AppModule {
 }

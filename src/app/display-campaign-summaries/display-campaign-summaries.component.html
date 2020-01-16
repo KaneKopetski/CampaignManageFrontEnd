@@ -37,9 +37,6 @@
 
 <!--</mat-card>-->
 
-<div class="content">
-<div class="row">
-
 <!--  <mat-card class="create-campaign-card">-->
 <!--    <mat-card-header>-->
 <!--      <mat-card-title>-->
@@ -47,13 +44,19 @@
 <!--       </mat-card-title>-->
 <!--    <mat-card-content>-->
 <!--      <div class="create-campaign">-->
-  <!--        <p>+</p>-->
-  <!--      </div>-->
-  <!--    </mat-card-content>-->
+<!--        <p>+</p>-->
+<!--      </div>-->
+<!--    </mat-card-content>-->
 <!--    </mat-card-header>-->
 <!--  </mat-card>-->
 
-  <mat-card class="create-campaign-card" routerLink="/newcampaign">
+
+
+
+<div class="content">
+<div class="row">
+
+  <mat-card class="create-campaign-card" (click)="openDialog()">
     <mat-card-header>
       <mat-card-title>Create Campaign</mat-card-title>
     </mat-card-header>
@@ -86,8 +89,21 @@
 </div>
 
 
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
-<div class="mat-app-background basic-container">
-  <dialog-overview-example>loading</dialog-overview-example>
-</div>
-<span class="version-info">Current build: 8.2.3</span>
+
+
+<!--<div>-->
+<!--  <ol>-->
+<!--    <li>-->
+<!--      <mat-form-field>-->
+<!--        <input matInput [(ngModel)]="name" placeholder="What's your name?">-->
+<!--      </mat-form-field>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--      <button mat-raised-button (click)="openDialog()">Pick one</button>-->
+<!--    </li>-->
+<!--    <br />-->
+<!--    <li *ngIf="animal">-->
+<!--      You chose: <p style="font-weight: bold">{{animal}}</p>-->
+<!--    </li>-->
+<!--  </ol>-->
+<!--</div>-->
