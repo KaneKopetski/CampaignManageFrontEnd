@@ -1,32 +1,30 @@
 <div class="content">
-  <div class="card">
+  <div class="form-content">
+  <mat-card-title>Create Campaign</mat-card-title>
 
     <form class="form-create-campaign" [formGroup]="createCampaign" (ngSubmit)="submit()" novalidate>
 
-<!--      <mat-card-title>Campaign Info</mat-card-title>-->
+      <mat-form-field formControlName="edition" appearance="outline">
+        <mat-label>Campaign Edition</mat-label>
+        <mat-select [formControlName]="'edition'">
+          <mat-option *ngFor="let edition of editions" [value]="edition.value">
+            {{edition.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
       <div class="form-group">
-        <mat-form-field class="campaign-name">
-          <label>
-            <input matInput placeholder="campaign name" value="" [formControlName]="'campaignName'">
-          </label>
+        <mat-form-field class="campaign-name" appearance="outline">
+          <mat-label>Campaign Name</mat-label>
+          <input matInput [formControlName]="'campaignName'">
         </mat-form-field>
         <ng-container *ngIf="hasError('campaignName', 'required')">This field is required</ng-container>
       </div>
 
-      <div class="form-group">
-              <label>
-                <select matNativeControl required formControlName="edition">
-                  <option label="Select an Edition"></option>
-                  <option value="3.5">3.5</option>
-                  <option value="4E">4E</option>
-                  <option value="5E">5E</option>
-                </select>
-              </label>
-      </div>
+
 
       <div class="form-group">
-      <mat-form-field>
+      <mat-form-field appearance="outline">
         <mat-label>Campaign Description</mat-label>
         <label>
 <textarea class="blurb" matInput [formControlName]="'description'"
@@ -39,7 +37,6 @@
       </mat-form-field>
       </div>
 
-<!--      <mat-card-title>Upload Campaign Banner</mat-card-title>-->
 
       <div class="form-group">
         <app-file-upload formControlName="campaignImage" [progress]="progress"></app-file-upload>
@@ -49,7 +46,6 @@
         </div>
       </div>
 
-<!--      <mat-card-title>Upload World Map</mat-card-title>-->
 
       <div class="form-group">
         <app-file-upload formControlName="worldMap" [progress]="progress"></app-file-upload>
@@ -59,7 +55,7 @@
         </div>
       </div>
 
-      <button class="btn btn-sm btn-primary btn-block" type="submit">Login</button>
+      <button class="btn btn-sm btn-primary btn-block" type="submit">Create</button>
 
     </form>
   </div>

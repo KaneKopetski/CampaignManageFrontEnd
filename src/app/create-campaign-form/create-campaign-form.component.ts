@@ -20,6 +20,11 @@ export function toResponseBody<T>() {
   );
 }
 
+export interface Editions {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-create-campaign-form',
   templateUrl: './create-campaign-form.component.html',
@@ -27,6 +32,12 @@ export function toResponseBody<T>() {
 })
 export class CreateCampaignFormComponent {
   progress = 0;
+  editions: Editions[] = [
+    {value: '3.5', viewValue: '3.5'},
+    {value: '4E', viewValue: '4E'},
+    {value: '5E', viewValue: '5E'}
+  ];
+
 
   createCampaign = new FormGroup({
     campaignName: new FormControl(null, Validators.required),

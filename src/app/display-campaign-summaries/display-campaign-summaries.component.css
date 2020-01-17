@@ -24,11 +24,10 @@
 
 .campaign-summary-card, .create-campaign-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 350px;
-  min-width: 350px;
+  width: 350px;
   max-height: 360px;
-  padding: 30px;
-  margin-top: 30px;
+  padding: 15px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -37,7 +36,7 @@
 }
 
 .campaign-image {
-  padding: 15px;
+  padding: 5px;
 }
 
 .campaign-card-avatar {
@@ -50,8 +49,6 @@
 }
 
 .create-campaign-box {
-  border: 1px dashed #7c7db3;
-  border-radius: 3px;
   position: relative;
   margin: 0 auto;
   padding: 26px 20px 30px;
@@ -59,4 +56,31 @@
 
 .plus-sign {
   height: 150px;
+  border: 1px dashed #7c7db3;
+  border-radius: 3px;
   }
+
+.row {
+  padding: 15px;
+
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+
+.mat-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-card-header {
+  flex-shrink: 0;
+}
+
+.mat-card-content {
+  flex-grow: 1;
+  overflow: auto;
+}
