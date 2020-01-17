@@ -4,7 +4,6 @@ import { pipe } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
 import { requiredFileType } from './upload-file-validators';
 import {Component} from '@angular/core';
-import {CampaignService} from '../campaign.service';
 
 export function uploadProgress<T>( cb: ( progress: number ) => void ) {
   return tap(( event: HttpEvent<T> ) => {
@@ -22,11 +21,11 @@ export function toResponseBody<T>() {
 }
 
 @Component({
-  selector: 'app-create-campaign',
-  templateUrl: './create-campaign.component.html',
-  styleUrls: ['./create-campaign.component.css']
+  selector: 'app-create-campaign-form',
+  templateUrl: './create-campaign-form.component.html',
+  styleUrls: ['./create-campaign-form.component.css']
 })
-export class CreateCampaignComponent {
+export class CreateCampaignFormComponent {
   progress = 0;
 
   createCampaign = new FormGroup({
@@ -39,8 +38,9 @@ export class CreateCampaignComponent {
   });
   success = false;
 
-  constructor(private http: HttpClient, private campaignService: CampaignService) {
+  constructor(private http: HttpClient) {
   }
+
 
   submit() {
     this.success = false;
@@ -60,6 +60,7 @@ export class CreateCampaignComponent {
       this.success = true;
       this.createCampaign.reset();
     });
+
   }
 
   hasError( field: string, error: string ) {

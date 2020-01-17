@@ -58,6 +58,7 @@
 
   <mat-card class="create-campaign-card" (click)="openDialog()">
     <mat-card-header>
+      <mat-card-title *ngIf="(campaigns | async)?.length==0">You don't have any campaigns</mat-card-title>
       <mat-card-title>Create Campaign</mat-card-title>
     </mat-card-header>
     <div class="create-campaign-box">
@@ -68,9 +69,10 @@
 
 <mat-card class="campaign-summary-card" *ngFor="let campaign of campaigns | async">
   <mat-card-header>
-    <mat-card-title><a routerLink="/campaign/{{campaign.campaignId}}" class="campaign-name">
-      {{this.campaign.campaignName}}
-    </a>
+    <mat-card-title>
+      <a routerLink="/campaign/{{campaign.campaignId}}" class="campaign-name">
+        {{this.campaign.campaignName}}
+      </a>
     </mat-card-title>
     <mat-card-subtitle>Edition {{campaign.edition}}</mat-card-subtitle>
   </mat-card-header>

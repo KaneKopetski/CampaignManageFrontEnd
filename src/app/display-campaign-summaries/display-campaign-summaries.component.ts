@@ -4,8 +4,9 @@ import {LocalStorageService} from 'ngx-webstorage';
 import {CampaignService} from '../campaign.service';
 import {CampaignResponseLessWorldMap} from './campaign-response-lessworldmap';
 import {Observable} from 'rxjs';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog} from '@angular/material';
 import {CampaignCreationModalComponent} from '../campaign-creation-modal/campaign-creation-modal.component';
+import {CampaignResponse} from '../display-single-campaign/campaign-response';
 
 @Component({
   selector: 'app-display-campaign-summaries',
@@ -13,7 +14,7 @@ import {CampaignCreationModalComponent} from '../campaign-creation-modal/campaig
   styleUrls: ['./display-campaign-summaries.component.css']
 })
 export class DisplayCampaignSummariesComponent implements OnInit {
-  campaigns: Observable<Array<CampaignResponseLessWorldMap>>;
+  campaigns: Observable<Array<CampaignResponse>>;
   username: string;
   animal: string;
   name: string;
@@ -29,7 +30,6 @@ export class DisplayCampaignSummariesComponent implements OnInit {
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(CampaignCreationModalComponent, {
-      // width: '800px',
       data: {name: this.name, animal: this.animal}
     });
 

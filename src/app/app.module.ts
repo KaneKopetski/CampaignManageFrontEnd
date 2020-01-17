@@ -19,7 +19,6 @@ import { AuthGuard } from './auth.guard';
 import { UploadImageComponent } from './upload-image/upload-image.component';
 import { CommentComponent } from './comment/comment.component';
 import { AddCommentComponent } from './add-comment/add-comment.component';
-import { CreateCampaignComponent } from './create-campaign/create-campaign.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { NewCampaignEditionSelectionComponent } from './new-campaign-edition-selection/new-campaign-edition-selection.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -62,8 +61,7 @@ import {SafeUrlPipeService} from './safe-url-pipe.service';
 import {DisplayCampaignComponent} from './display-single-campaign/display-campaign.component';
 import {DisplayCampaignSummariesComponent} from './display-campaign-summaries/display-campaign-summaries.component';
 import {CampaignCreationModalComponent} from './campaign-creation-modal/campaign-creation-modal.component';
-
-
+import {CreateCampaignFormComponent} from './create-campaign-form/create-campaign-form.component';
 
 
 @NgModule({
@@ -79,7 +77,6 @@ import {CampaignCreationModalComponent} from './campaign-creation-modal/campaign
     UploadImageComponent,
     CommentComponent,
     AddCommentComponent,
-    CreateCampaignComponent,
     ImageUploadComponent,
     NewCampaignEditionSelectionComponent,
     FileUploadComponent,
@@ -89,7 +86,8 @@ import {CampaignCreationModalComponent} from './campaign-creation-modal/campaign
     SafeUrlPipeService,
     DisplayCampaignComponent,
     DisplayCampaignSummariesComponent,
-    CampaignCreationModalComponent
+    CampaignCreationModalComponent,
+    CreateCampaignFormComponent
   ],
   imports: [
     BrowserModule,
@@ -142,12 +140,12 @@ import {CampaignCreationModalComponent} from './campaign-creation-modal/campaign
       {path: 'uploadimage', component: UploadImageComponent},
       {path: 'comment', component: CommentComponent},
       {path: 'post/:postId/add-comment', component: AddCommentComponent},
-      {path: 'select-edition/create-campaign', component: CreateCampaignComponent},
+      {path: 'select-edition/create-campaign', component: CreateCampaignFormComponent},
       {path: 'select-edition', component: NewCampaignEditionSelectionComponent},
       {path: 'view-profile', component: DisplayProfileComponent},
       {path: 'campaigns', component: DisplayCampaignSummariesComponent},
       {path: 'campaign/:campaignId', component: DisplayCampaignComponent},
-      {path: 'newcampaign', component: CreateCampaignComponent}
+      {path: 'new-campaign', component: CreateCampaignFormComponent}
     ]),
     BrowserAnimationsModule,
     MatToolbarModule,
