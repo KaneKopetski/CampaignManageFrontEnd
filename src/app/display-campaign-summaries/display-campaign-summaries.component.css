@@ -37,6 +37,8 @@
 
 .campaign-image {
   padding: 5px;
+  width: 100px;
+  height: auto;
 }
 
 .campaign-card-avatar {
@@ -66,7 +68,7 @@
 }
 
 .content {
-  display: flex;
+  display: block;
   justify-content: center;
 }
 
