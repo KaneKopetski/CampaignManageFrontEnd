@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { DialogData } from '../DialogData';
 
 @Component({
   selector: 'app-campaign-creation-modal',
@@ -10,8 +9,7 @@ import { DialogData } from '../DialogData';
 export class CampaignCreationModalComponent implements OnInit {
 
   constructor(
-    public dialogRef: MatDialogRef<CampaignCreationModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+    public dialogRef: MatDialogRef<CampaignCreationModalComponent>) {}
 
   onNoClick(): void {
     this.dialogRef.close();
