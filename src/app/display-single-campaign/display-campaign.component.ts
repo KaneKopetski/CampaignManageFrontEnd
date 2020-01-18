@@ -20,7 +20,7 @@ export class DisplayCampaignComponent implements OnInit {
 
   ngOnInit() {
     this.router.params.subscribe(params => {
-      this.permaLink = params['campaignId'];
+      this.permaLink = params.campaignId;
     });
     this.campaignService.getCampaignById(this.permaLink).subscribe((data: CampaignResponse) => {
       this.campaign = data;
@@ -29,5 +29,9 @@ export class DisplayCampaignComponent implements OnInit {
     }, (err: any) => {
       console.log('Failure Response');
     });
+  }
+
+  delete(): void {
+    this.campaignService.deleteCampaignById(this.permaLink);
   }
 }

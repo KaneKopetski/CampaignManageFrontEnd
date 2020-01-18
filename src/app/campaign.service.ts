@@ -22,4 +22,8 @@ export class CampaignService {
   getCampaignById(permaLink: number): Observable<CampaignResponse> {
     return this.httpClient.get<CampaignResponse>('http://localhost:8080/api/campaigns/get/' + permaLink);
   }
+
+  deleteCampaignById(permaLink: number) {
+    return this.httpClient.delete('http://localhost:8000/api/campaigns/delete' + permaLink);
+  }
 }

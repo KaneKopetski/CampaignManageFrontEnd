@@ -1,12 +1,15 @@
 <div class="content">
-  <div class="card" *ngIf=campaign>
-    <img class="campaign-image" [src]="'data:image/png;base64,'+this.image"  alt="campaign-image" height="100px" width="100px"/>
-    <h1>{{this.campaign.campaignName}}</h1>
-    <p class="edition">{{this.campaign.edition}}</p>
-    <p class="owner">{{this.campaign.owner}}</p>
-    <p class="description" [innerHTML]="campaign.description"></p>
-    <h3>World Map</h3>
-    <img class="campaign-worldmap" [src]="'data:image/png;base64,'+this.image2"  alt="world-map"/>
-
-  </div>
+  <mat-card *ngIf=campaign>
+    <img mat-card-image class="campaign-image" [src]="'data:image/png;base64,'+this.image" alt="campaign-image"/>
+    <mat-card-title>{{this.campaign.campaignName}}</mat-card-title>
+    <mat-card-subtitle>{{this.campaign.edition}}</mat-card-subtitle>
+    <mat-card-subtitle>{{this.campaign.owner}}</mat-card-subtitle>
+    <mat-card-content [innerHTML]="campaign.description"></mat-card-content>
+    <mat-card-title>World Map</mat-card-title>
+    <img mat-card-image class="campaign-worldmap" [src]="'data:image/png;base64,'+this.image2" alt="world-map"/>
+    <mat-card-actions>
+      <button class="edit" mat-button>Edit</button>
+      <button class="delete" mat-button>Delete</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
