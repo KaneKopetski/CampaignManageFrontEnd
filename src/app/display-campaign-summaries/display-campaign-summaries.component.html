@@ -1,58 +1,3 @@
-<!--<div class="content">-->
-<!--  <div class="row">-->
-<!--    <div class="card" *ngFor="let campaign of campaigns | async">-->
-<!--      <div class="campaign-summaries">-->
-<!--        <img class="campaign-image" [src]="'data:image/png;base64,'+this.campaign.campaignImage.data"  alt="campaign-image"/>-->
-<!--        <h3><a routerLink="/campaign/{{campaign.campaignId}}" class="campaign-name"><b>{{campaign.campaignName}}</b></a></h3>-->
-<!--        <div>-->
-<!--          <i class="fas fa-user"></i> Owner: {{campaign.owner}}-->
-<!--          <p>{{campaign.edition}}</p>-->
-<!--        </div>-->
-<!--&lt;!&ndash;        <p class="campaign-description" [innerHTML]="campaign.description"></p>&ndash;&gt;-->
-<!--        <div>-->
-<!--        </div>-->
-<!--        <hr>-->
-<!--      </div>-->
-<!--      <hr>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-
-<!--<mat-card class="campaign-card" *ngFor="let campaign of campaigns | async">-->
-<!--  <div mat-card-avatar class="campaign-card-avatar"></div>-->
-<!--  <img mat-card-image [src]="'data:image/png;base64,'+this.campaign.campaignImage.data"  alt="campaign-image"/>-->
-<!--&lt;!&ndash;  <img mat-card-image class="campaign-image" src="'data:image/png;base64,'+{{campaign.campaignImage.data}}"  alt="campaign-image">&ndash;&gt;-->
-<!--  <mat-card-title>-->
-<!--    <a routerLink="/campaign/{{campaign.campaignId}}" class="campaign-name">-->
-<!--      {{this.campaign.campaignName}}-->
-<!--    </a>-->
-<!--  </mat-card-title>-->
-<!--  <mat-card-content class="campaign-description">-->
-<!--    {{this.campaign.edition}}-->
-<!--    <mat-card-actions>-->
-<!--      <button mat-flat-button>See More</button>-->
-<!--    </mat-card-actions>-->
-<!--    <p class="campaign-description" [innerHTML]="campaign.description">-->
-<!--  </mat-card-content>-->
-
-<!--</mat-card>-->
-
-<!--  <mat-card class="create-campaign-card">-->
-<!--    <mat-card-header>-->
-<!--      <mat-card-title>-->
-<!--       Create New Campaign-->
-<!--       </mat-card-title>-->
-<!--    <mat-card-content>-->
-<!--      <div class="create-campaign">-->
-<!--        <p>+</p>-->
-<!--      </div>-->
-<!--    </mat-card-content>-->
-<!--    </mat-card-header>-->
-<!--  </mat-card>-->
-
-
-
-
 <div class="content">
 <div class="row">
   <mat-card class="create-campaign-card" (click)="openDialog()">
@@ -61,7 +6,7 @@
       <mat-card-title>Create Campaign</mat-card-title>
     </mat-card-header>
     <div class="create-campaign-box">
-      <img mat-card-image class="plus-sign" src="https://image.flaticon.com/icons/svg/32/32339.svg" alt="plus-sign">
+      <img mat-card-image class="plus-sign" src="./assets/img/plus-sign.png" alt="plus-sign">
     </div>
 
   </mat-card>
@@ -88,23 +33,3 @@
 </mat-card>
 </div>
 </div>
-
-
-
-
-<!--<div>-->
-<!--  <ol>-->
-<!--    <li>-->
-<!--      <mat-form-field>-->
-<!--        <input matInput [(ngModel)]="name" placeholder="What's your name?">-->
-<!--      </mat-form-field>-->
-<!--    </li>-->
-<!--    <li>-->
-<!--      <button mat-raised-button (click)="openDialog()">Pick one</button>-->
-<!--    </li>-->
-<!--    <br />-->
-<!--    <li *ngIf="animal">-->
-<!--      You chose: <p style="font-weight: bold">{{animal}}</p>-->
-<!--    </li>-->
-<!--  </ol>-->
-<!--</div>-->

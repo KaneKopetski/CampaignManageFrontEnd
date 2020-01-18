@@ -1,9 +1,9 @@
-.content {
-  max-width: 600px;
-  margin: auto;
-  align-items: center;
+/*.content {*/
+/*  max-width: 600px;*/
+/*  margin: auto;*/
+/*  align-items: center;*/
 
-}
+/*}*/
 
 .form-content {
   padding: 15px;
@@ -15,4 +15,20 @@
   outline: none;
   border: none;
   background-color: #673ab7;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 800px;
+  padding: 15px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.mat-input-element {
+width: 700px;
 }

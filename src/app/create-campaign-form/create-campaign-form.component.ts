@@ -38,7 +38,6 @@ export class CreateCampaignFormComponent {
     {value: '5E', viewValue: '5E'}
   ];
 
-
   createCampaign = new FormGroup({
     campaignName: new FormControl(null, Validators.required),
     edition: new FormControl(null, Validators.required),
@@ -81,18 +80,18 @@ export class CreateCampaignFormComponent {
 }
 
 export function markAllAsDirty( form: FormGroup ) {
-  for ( const control of Object.keys(form.controls) ) {
-    form.controls[control].markAsDirty();
+    for ( const control of Object.keys(form.controls) ) {
+      form.controls[control].markAsDirty();
+    }
   }
-}
 
 export function toFormData<T>( formValue: T ) {
-  const formData = new FormData();
+    const formData = new FormData();
 
-  for ( const key of Object.keys(formValue) ) {
+    for ( const key of Object.keys(formValue) ) {
     const value = formValue[key];
     formData.append(key, value);
   }
 
-  return formData;
+    return formData;
 }

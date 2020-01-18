@@ -1,12 +1,13 @@
 <div class="content">
+  <mat-card class="card">
   <div class="form-content">
   <mat-card-title>Create Campaign</mat-card-title>
 
     <form class="form-create-campaign" [formGroup]="createCampaign" (ngSubmit)="submit()" novalidate>
 
-      <mat-form-field formControlName="edition" appearance="outline">
+      <mat-form-field appearance="outline">
         <mat-label>Campaign Edition</mat-label>
-        <mat-select [formControlName]="'edition'">
+        <mat-select formControlName="edition" [formControlName]="'edition'">
           <mat-option *ngFor="let edition of editions" [value]="edition.value">
             {{edition.viewValue}}
           </mat-option>
@@ -16,27 +17,24 @@
       <div class="form-group">
         <mat-form-field class="campaign-name" appearance="outline">
           <mat-label>Campaign Name</mat-label>
-          <input matInput [formControlName]="'campaignName'">
+          <input matInput [formControlName]="'campaignName'" maxlength="125">
         </mat-form-field>
         <ng-container *ngIf="hasError('campaignName', 'required')">This field is required</ng-container>
       </div>
-
-
 
       <div class="form-group">
       <mat-form-field appearance="outline">
         <mat-label>Campaign Description</mat-label>
         <label>
-<textarea class="blurb" matInput [formControlName]="'description'"
+<textarea class="blurb" matInput [formControlName]="'description'" maxlength="15000"
           cdkTextareaAutosize
           #autosize="cdkTextareaAutosize"
           cdkAutosizeMinRows="5"
-          cdkAutosizeMaxRows="35">
+          cdkAutosizeMaxRows="15">
 </textarea>
         </label>
       </mat-form-field>
       </div>
-
 
       <div class="form-group">
         <app-file-upload formControlName="campaignImage" [progress]="progress"></app-file-upload>
@@ -45,7 +43,6 @@
           <ng-container *ngIf="hasError('campaignImage', 'requiredFileType')">Only PNG 🤡</ng-container>
         </div>
       </div>
-
 
       <div class="form-group">
         <app-file-upload formControlName="worldMap" [progress]="progress"></app-file-upload>
@@ -59,4 +56,5 @@
 
     </form>
   </div>
+  </mat-card>
 </div>

@@ -145,7 +145,7 @@ import {CreateCampaignFormComponent} from './create-campaign-form/create-campaig
       {path: 'view-profile', component: DisplayProfileComponent},
       {path: 'campaigns', component: DisplayCampaignSummariesComponent},
       {path: 'campaign/:campaignId', component: DisplayCampaignComponent},
-      {path: 'new-campaign', component: CreateCampaignFormComponent}
+      {path: 'create-campaign', component: CreateCampaignFormComponent}
     ]),
     BrowserAnimationsModule,
     MatToolbarModule,
