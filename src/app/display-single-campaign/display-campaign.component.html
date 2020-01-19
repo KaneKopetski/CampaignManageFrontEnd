@@ -9,7 +9,7 @@
     <img mat-card-image class="campaign-worldmap" [src]="'data:image/png;base64,'+this.image2" alt="world-map"/>
     <mat-card-actions>
       <button class="edit" mat-button>Edit</button>
-      <button class="delete" mat-button>Delete</button>
+      <button class="delete" mat-button (click)="delete()">Delete</button>
     </mat-card-actions>
   </mat-card>
 </div>

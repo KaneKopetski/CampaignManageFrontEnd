@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
-// import {CampaignPayload} from './create-campaign/campaign-payload';
 import {CampaignResponse} from './display-single-campaign/campaign-response';
 
 @Injectable({
@@ -24,6 +23,8 @@ export class CampaignService {
   }
 
   deleteCampaignById(permaLink: number) {
-    return this.httpClient.delete('http://localhost:8000/api/campaigns/delete' + permaLink);
+    console.log('Hit endpoint delete with id: ' + permaLink);
+    console.log('URL: http://localhost:8080/api/campaigns/delete/' + permaLink);
+    return this.httpClient.delete('http://localhost:8080/api/campaigns/delete/' + permaLink);
   }
 }

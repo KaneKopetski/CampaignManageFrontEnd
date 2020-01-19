@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {CampaignService} from '../campaign.service';
 import {CampaignResponse} from './campaign-response';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-display-profile',
@@ -15,7 +16,7 @@ export class DisplayCampaignComponent implements OnInit {
   image: Blob;
   image2: Blob;
 
-  constructor(private router: ActivatedRoute, private campaignService: CampaignService) {
+  constructor(private router: ActivatedRoute, private campaignService: CampaignService, private router1: Router) {
   }
 
   ngOnInit() {
@@ -32,6 +33,8 @@ export class DisplayCampaignComponent implements OnInit {
   }
 
   delete(): void {
+    console.log('Delete campaign with ID: ' + this.permaLink);
     this.campaignService.deleteCampaignById(this.permaLink);
+    this.router1.navigateByUrl('/campaigns');
   }
 }

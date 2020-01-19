@@ -4,6 +4,7 @@ import { pipe } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
 import { requiredFileType } from './upload-file-validators';
 import {Component} from '@angular/core';
+import {Router} from '@angular/router';
 
 export function uploadProgress<T>( cb: ( progress: number ) => void ) {
   return tap(( event: HttpEvent<T> ) => {
@@ -48,7 +49,7 @@ export class CreateCampaignFormComponent {
   });
   success = false;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
   }
 
 
@@ -70,7 +71,7 @@ export class CreateCampaignFormComponent {
       this.success = true;
       this.createCampaign.reset();
     });
-
+    this.router.navigateByUrl('/campaigns');
   }
 
   hasError( field: string, error: string ) {
