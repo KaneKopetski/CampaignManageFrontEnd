@@ -37,4 +37,5 @@ export class DisplayCampaignComponent implements OnInit {
     this.campaignService.deleteCampaignById(this.permaLink);
     this.router1.navigateByUrl('/campaigns');
   }
+
 }

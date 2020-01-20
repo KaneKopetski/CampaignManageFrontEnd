@@ -1,0 +1,62 @@
+<div class="content">
+  <mat-card class="card">
+  <div class="form-content">
+  <mat-card-title>Edit Campaign</mat-card-title>
+
+    <form class="form-create-campaign" [formGroup]="editCampaign" (ngSubmit)="submit()" novalidate>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Campaign Edition</mat-label>
+        <mat-select formControlName="edition" [formControlName]="'edition'">
+          <mat-option *ngFor="let edition of editions" [value]="edition.value">
+            {{edition.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="form-group">
+        <mat-form-field class="campaign-name" appearance="outline">
+          <mat-label>Campaign Name</mat-label>
+          <input matInput [formControlName]="'campaignName'" maxlength="125">
+        </mat-form-field>
+        <ng-container *ngIf="hasError('campaignName', 'required')">This field is required</ng-container>
+      </div>
+
+      <div class="form-group">
+      <mat-form-field appearance="outline">
+        <mat-label>Campaign Description</mat-label>
+        <label>
+<textarea class="blurb" matInput [formControlName]="'description'" maxlength="15000"
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="5"
+          cdkAutosizeMaxRows="15">
+</textarea>
+        </label>
+      </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <app-file-upload formControlName="campaignImage" [progress]="progress"></app-file-upload>
+        <div class="invalid-feedback" style="display: block">
+          <ng-container *ngIf="hasError('campaignImage', 'required')">This field is required</ng-container>
+          <ng-container *ngIf="hasError('campaignImage', 'requiredFileType')">Only PNG 🤡</ng-container>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <app-file-upload formControlName="worldMap" [progress]="progress"></app-file-upload>
+        <div class="invalid-feedback" style="display: block">
+          <ng-container *ngIf="hasError('worldMap', 'required')">This field is required</ng-container>
+          <ng-container *ngIf="hasError('worldMap', 'requiredFileType')">Only PNG 🤡</ng-container>
+        </div>
+      </div>
+
+      <button class="btn btn-sm btn-primary btn-block" type="submit">Create</button>
+      <img mat-card-image class="campaign-worldmap" [src]="'data:image/png;base64,'+this.cmpWorldMap" alt="world-map"/>
+      <img mat-card-image class="campaign-image" [src]="'data:image/png;base64,'+this.cmpImage" alt="campaign-image"/>
+
+    </form>
+  </div>
+  </mat-card>
+</div>

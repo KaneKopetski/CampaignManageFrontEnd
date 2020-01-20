@@ -8,7 +8,9 @@
     <mat-card-title>World Map</mat-card-title>
     <img mat-card-image class="campaign-worldmap" [src]="'data:image/png;base64,'+this.image2" alt="world-map"/>
     <mat-card-actions>
-      <button class="edit" mat-button>Edit</button>
+      <a routerLink="/edit-campaign/{{campaign.campaignId}}">
+        <button class="edit" mat-button>Edit</button>
+      </a>
       <button class="delete" mat-button (click)="delete()">Delete</button>
     </mat-card-actions>
   </mat-card>

@@ -62,6 +62,7 @@ import {DisplayCampaignComponent} from './display-single-campaign/display-campai
 import {DisplayCampaignSummariesComponent} from './display-campaign-summaries/display-campaign-summaries.component';
 import {CampaignCreationModalComponent} from './campaign-creation-modal/campaign-creation-modal.component';
 import {CreateCampaignFormComponent} from './create-campaign-form/create-campaign-form.component';
+import {EditCampaignFormComponent} from './edit-campaign-form/edit-campaign-form.component';
 
 
 @NgModule({
@@ -87,7 +88,8 @@ import {CreateCampaignFormComponent} from './create-campaign-form/create-campaig
     DisplayCampaignComponent,
     DisplayCampaignSummariesComponent,
     CampaignCreationModalComponent,
-    CreateCampaignFormComponent
+    CreateCampaignFormComponent,
+    EditCampaignFormComponent
   ],
   imports: [
     BrowserModule,
@@ -145,7 +147,8 @@ import {CreateCampaignFormComponent} from './create-campaign-form/create-campaig
       {path: 'view-profile', component: DisplayProfileComponent},
       {path: 'campaigns', component: DisplayCampaignSummariesComponent},
       {path: 'campaign/:campaignId', component: DisplayCampaignComponent},
-      {path: 'create-campaign', component: CreateCampaignFormComponent}
+      {path: 'create-campaign', component: CreateCampaignFormComponent},
+      {path: 'edit-campaign/:campaignId', component: EditCampaignFormComponent}
     ]),
     BrowserAnimationsModule,
     MatToolbarModule,

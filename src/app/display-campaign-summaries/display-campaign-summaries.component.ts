@@ -2,9 +2,8 @@ import {Component, OnInit, Inject} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {LocalStorageService} from 'ngx-webstorage';
 import {CampaignService} from '../campaign.service';
-import {CampaignResponseLessWorldMap} from './campaign-response-lessworldmap';
 import {Observable} from 'rxjs';
-import { MatDialog} from '@angular/material';
+import {MatDialog} from '@angular/material';
 import {CampaignCreationModalComponent} from '../campaign-creation-modal/campaign-creation-modal.component';
 import {CampaignResponse} from '../display-single-campaign/campaign-response';
 
@@ -20,7 +19,7 @@ export class DisplayCampaignSummariesComponent implements OnInit {
   name: string;
 
   // tslint:disable-next-line:max-line-length
-  constructor(private router: ActivatedRoute, private campaignService: CampaignService, private localStorageService: LocalStorageService, public dialog: MatDialog) {
+  constructor(private campaignService: CampaignService, private localStorageService: LocalStorageService, public dialog: MatDialog) {
   }
 
   ngOnInit() {
