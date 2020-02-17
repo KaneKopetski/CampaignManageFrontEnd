@@ -1,31 +1,31 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <a routerLink="/home"><span> <img class="banner" src="./assets/img/logo-notext-transparent.png"></span></a>
-    <div fxFlex fxLayout fxLayoutAlign="flex-end">
-      <ul fxLayout fxLayoutGap="20px">
-        <button mat-icon-button [matMenuTriggerFor]="auth">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <mat-menu #auth="matMenu">
-          <button mat-menu-item *ngIf="authService.isAuthenticated()" (click)="logout()" [routerLink]="'/login'" >
-            <mat-icon>exit_to_app</mat-icon>
-            <span>Sign out</span>
-          </button>
-          <button mat-menu-item *ngIf="!authService.isAuthenticated()" [routerLink]="'/login'">
-            <mat-icon>settings_power</mat-icon>
-            <span>Sign In</span>
-          </button>
-          <button mat-menu-item *ngIf="authService.isAuthenticated()" [routerLink]="'/view-profile'">
-            <mat-icon>account_box</mat-icon>
-            <span>View/Edit Profile</span>
-          </button>
-          <button mat-menu-item *ngIf="authService.isAuthenticated()" [routerLink]="'/profile-test'">
-            <mat-icon>settings</mat-icon>
-            <span>Settings</span>
-          </button>
-        </mat-menu>
-      </ul>
-    </div>
-  </mat-toolbar-row>
-  <mat-toolbar-row></mat-toolbar-row>
-</mat-toolbar>
+<!--<mat-toolbar color="primary">-->
+<!--  <mat-toolbar-row>-->
+<!--    <a routerLink="/home"><span> <img class="banner" src="./assets/img/logo-notext-transparent.png"></span></a>-->
+<!--    <div fxFlex fxLayout fxLayoutAlign="flex-end">-->
+<!--      <ul fxLayout fxLayoutGap="20px">-->
+<!--        <button mat-icon-button [matMenuTriggerFor]="auth">-->
+<!--          <mat-icon>menu</mat-icon>-->
+<!--        </button>-->
+<!--        <mat-menu #auth="matMenu">-->
+<!--          <button mat-menu-item *ngIf="authService.isAuthenticated()" (click)="logout()" [routerLink]="'/login'" >-->
+<!--            <mat-icon>exit_to_app</mat-icon>-->
+<!--            <span>Sign out</span>-->
+<!--          </button>-->
+<!--          <button mat-menu-item *ngIf="!authService.isAuthenticated()" [routerLink]="'/login'">-->
+<!--            <mat-icon>settings_power</mat-icon>-->
+<!--            <span>Sign In</span>-->
+<!--          </button>-->
+<!--          <button mat-menu-item *ngIf="authService.isAuthenticated()" [routerLink]="'/view-profile'">-->
+<!--            <mat-icon>account_box</mat-icon>-->
+<!--            <span>View/Edit Profile</span>-->
+<!--          </button>-->
+<!--          <button mat-menu-item *ngIf="authService.isAuthenticated()" [routerLink]="'/profile-test'">-->
+<!--            <mat-icon>settings</mat-icon>-->
+<!--            <span>Settings</span>-->
+<!--          </button>-->
+<!--        </mat-menu>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </mat-toolbar-row>-->
+<!--  <mat-toolbar-row></mat-toolbar-row>-->
+<!--</mat-toolbar>-->

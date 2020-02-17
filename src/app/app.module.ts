@@ -62,6 +62,10 @@ import {DisplayCampaignComponent} from './display-single-campaign/display-campai
 import {DisplayCampaignSummariesComponent} from './display-campaign-summaries/display-campaign-summaries.component';
 import {CampaignCreationModalComponent} from './campaign-creation-modal/campaign-creation-modal.component';
 import {CreateCampaignFormComponent} from './create-campaign-form/create-campaign-form.component';
+import { AngularFireModule} from '@angular/fire';
+import { AngularFirestoreModule} from '@angular/fire/firestore';
+import { AngularFireAuthModule} from '@angular/fire/auth';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -129,20 +133,27 @@ import {CreateCampaignFormComponent} from './create-campaign-form/create-campaig
     MatSortModule,
     MatPaginatorModule,
     FlexLayoutModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
     RouterModule.forRoot([
-      {path: '', component: HomeComponent},
-      {path: 'register', component: RegisterComponent},
-      {path: 'login', component: LoginComponent},
+      {path: '', redirectTo: 'login', pathMatch: 'full'},
+      {path: 'register', component: RegisterComponent, canActivate: [AuthGuard]},
+      {path: 'login', component: LoginComponent, canActivate: [AuthGuard]},
+      {path: 'profile', component: DisplayProfileComponent},
+
       {path: 'register-success', component: RegisterSuccessComponent},
+
       {path: 'home', component: HomeComponent},
       {path: 'add-post', component: AddPostComponent, canActivate: [AuthGuard]},
       {path: 'post/:postId', component: PostComponent},
       {path: 'uploadimage', component: UploadImageComponent},
       {path: 'comment', component: CommentComponent},
       {path: 'post/:postId/add-comment', component: AddCommentComponent},
-      {path: 'select-edition/create-campaign', component: CreateCampaignFormComponent},
+
+      {path: 'select-edition/create-campaign', component: CreateCampaignFormComponent, canActivate: [AuthGuard]},
       {path: 'select-edition', component: NewCampaignEditionSelectionComponent},
-      {path: 'view-profile', component: DisplayProfileComponent},
+
       {path: 'campaigns', component: DisplayCampaignSummariesComponent},
       {path: 'campaign/:campaignId', component: DisplayCampaignComponent},
       {path: 'create-campaign', component: CreateCampaignFormComponent}
